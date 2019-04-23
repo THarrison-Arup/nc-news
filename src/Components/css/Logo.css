@@ -1,0 +1,7 @@
+.Logo {
+  border: 1px solid rgb(60, 130, 236, 1.0);
+  background: rgb(60, 130, 236, 0.5);
+  color: black;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}

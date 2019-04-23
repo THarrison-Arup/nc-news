@@ -1,0 +1,49 @@
+.Header {
+  border: 1px solid rgb(255,150, 150, 1.0);
+  background: rgb(255, 150, 150, 0.5);
+  color: black;
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.header-Header {
+  color: blue;
+  grid-column: 1 / 6;
+  grid-row: 1 / 2;
+  vertical-align: middle;
+  text-align: left;
+  margin-left: 2em;
+}
+
+.header-Home {
+  color: red;
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+.header-Authors {
+  color: green; 
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.header-Articles {
+  color: orange;
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+}
+
+.header-Topics {
+  color: purple;
+  grid-column: 4 / 5;
+  grid-row: 2 / 3;
+}
+
+.header-MyProfile {
+  color: magenta;
+  grid-column: 5 / 6;
+  grid-row: 2 / 3;
+}
