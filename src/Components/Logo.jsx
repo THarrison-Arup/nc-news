@@ -4,7 +4,7 @@ import './css/Logo.css';
 const Logo = () => {
   return (
     <div className="Logo">
-      Logo
+    Insert Image
     </div>
   );
 };

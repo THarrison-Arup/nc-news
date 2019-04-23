@@ -3,6 +3,7 @@ import './css/Header.css';
 import { Link } from '@reach/router'
 
 class Header extends Component {
+
   render() {
     return (
       <div className="Header">
