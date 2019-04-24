@@ -1,11 +1,24 @@
 import React from "react";
 import "./css/Main.css";
 
-const Articles = ({ articles, handleArticleSearchSubmit, handleArticleSearchInput, handleArticleSearchClear, searchCriteria, handleArticleAddSubmit, handleArticleAddClear, handleArticleAddInput, addCriteria }) => {
+const Articles = ({
+  articles,
+  handleArticleSearchSubmit,
+  handleArticleSearchInput,
+  handleArticleSearchClear,
+  searchCriteria,
+  handleArticleAddSubmit,
+  handleArticleAddClear,
+  handleArticleAddInput,
+  addCriteria,
+  articleData
+}) => {
   const articleList = articles;
-  console.log(articleList);
-  const {searchid, searchauthor, searchtitle} = searchCriteria;
-  const {addtitle, addauthor, addtopic} = addCriteria;
+  const { searchid, searchauthor, searchtitle } = searchCriteria;
+  const { addtitle, addauthor, addtopic } = addCriteria;
+  const { article } = articleData;
+  console.log(articleData, 'articleData')
+
   return (
     <main className="Main-Articles">
       <form className="Articles-Search-Form">
@@ -50,17 +63,18 @@ const Articles = ({ articles, handleArticleSearchSubmit, handleArticleSearchInpu
         </button>
         <ul className="Articles-Search-Results">
           <h3>Search Results</h3>
+          <li>{article ? article.title : ""}</li>
         </ul>
       </form>
       <form className="Articles-Add-Form">
         <h2>Add an Article!</h2>
         <input
-         id="Articles-Add-Title"
-         type="text"
-         name="addtitle"
-         value={addtitle}
-         placeholder="Article Title..."
-         onChange={event => handleArticleAddInput(event)}
+          id="Articles-Add-Title"
+          type="text"
+          name="addtitle"
+          value={addtitle}
+          placeholder="Article Title..."
+          onChange={event => handleArticleAddInput(event)}
         />
         <input
           id="Articles-Add-Author"

@@ -3,15 +3,13 @@ import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import Nav from "./Components/Nav";
 import Logo from "./Components/Logo";
-// import * as api from "./api";
+import * as api from "./api";
 import { Router } from "@reach/router";
 import Home from "./Components/Home";
 import Articles from "./Components/Articles";
 import Authors from "./Components/Authors";
 import Topics from "./Components/Topics";
-
 import "./App.css";
-import { updateExpression } from "@babel/types";
 
 class App extends Component {
   state = {
@@ -21,6 +19,7 @@ class App extends Component {
     addtitle: "",
     addauthor: "",
     addtopic: "",
+    articleData: {},
     articles: [
       {
         article_id: 34,
@@ -80,6 +79,7 @@ class App extends Component {
             handleArticleAddInput={this.handleArticleAddInput}
             searchCriteria={{searchid, searchauthor, searchtitle }}
             addCriteria={{addauthor, addtitle, addtopic}}
+            articleData={this.state.articleData}
           />
           <Authors path="/authors" />
           <Topics path="/topics" topics={topics} />
@@ -99,9 +99,20 @@ class App extends Component {
   //   console.log(this.state,'<-- state');
   // };
 
+  // componentDidUpdate = async () => {
+  //   const articleData = await api.fetchArticleBySearch(searchid, searchauthor, searchtitle)
+  // }
+
   handleArticleSearchSubmit = event => {
     event.preventDefault();
-    console.log(event, "<--search submit event");
+    const { searchid, searchauthor, searchtitle } = this.state;
+    const articleData = api.fetchArticleBySearch(searchid, searchauthor, searchtitle)
+    .then(articleData => {
+      console.log(articleData.article)
+      this.setState({
+        articleData
+      })
+    })
   };
 
   handleArticleSearchInput = event => {
@@ -122,7 +133,6 @@ class App extends Component {
 
   handleArticleAddSubmit = event => {
     event.preventDefault();
-    console.log(event, "<--search submit event");
   }
 
   handleArticleAddInput = event => {
