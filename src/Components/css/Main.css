@@ -25,7 +25,7 @@
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
-.Articles-Search-Results {
+.Articles-Search-Repsonse {
   border: 1px solid rgb(50, 223, 253);
   background: rgb(50, 223, 253, 0.5);
   margin: 0;
@@ -34,6 +34,13 @@
   padding: 0;
   grid-column: 2/3;
   grid-row: 1/2;
+}
+
+.Articles-Search-Results {
+  border: 1px solid rgb(50, 131, 253);
+  background: rgb(50, 131, 253, 0.5);
+  padding: 0.5em;
+  margin: 0.5em;
 }
 
 #Articles-Search-ID {
@@ -96,7 +103,7 @@
   grid-column: 1 / 2;
 }
 
-.Articles-Add-Results {
+.Articles-Add-Response {
   border: 1px solid rgb(253, 50, 84);
   background: rgb(253, 50, 84, 0.5);
   margin: 0;
@@ -105,4 +112,11 @@
   padding: 0;
   grid-row: 2 / 7;
   grid-column: 2 / 3;
+}
+
+.Articles-Add-Results {
+  border: 1px solid rgb(253, 50, 50);
+  background: rgb(253, 50, 50, 0.5);
+  padding: 0.5em;
+  margin: 0.5em;
 }
