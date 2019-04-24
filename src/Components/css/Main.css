@@ -66,4 +66,43 @@ h2 {
   background: rgb(50, 97, 253, 0.5);
   grid-column: 1/3;
   grid-row: 2/3;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
+}
+
+#Articles-Add-Title {
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+}
+
+#Articles-Add-Author {
+  grid-row: 3 / 4;
+  grid-column: 1 / 2;
+}
+
+#Articles-Add-Topic {
+  grid-row: 4 / 5;
+  grid-column: 1 / 2;
+}
+
+#Articles-Add-Submit {
+  grid-row: 5 / 6;
+  grid-column: 1 / 2;
+}
+
+#Articles-Add-Clear {
+  grid-row: 6 / 7;
+  grid-column: 1 / 2;
+}
+
+.Articles-Add-Results {
+  border: 1px solid rgb(50, 104, 253, 1.0);
+  background: rgb(50, 104, 253, 0.5);
+  margin: 0;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  padding: 0;
+  grid-row: 2 / 7;
+  grid-column: 2 / 3;
 }

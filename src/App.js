@@ -15,9 +15,12 @@ import { updateExpression } from "@babel/types";
 
 class App extends Component {
   state = {
-    id: "",
-    title: "",
-    author: "",
+    searchid: "",
+    searchtitle: "",
+    searchauthor: "",
+    addtitle: "",
+    addauthor: "",
+    addtopic: "",
     articles: [
       {
         article_id: 34,
@@ -57,7 +60,7 @@ class App extends Component {
   };
 
   render() {
-    const { articles, topics, id, author, title } = this.state;
+    const { articles, topics, searchid, searchauthor, searchtitle, addauthor, addtitle, addtopic } = this.state;
     return (
       <div className="App">
         <Header />
@@ -71,8 +74,12 @@ class App extends Component {
             articles={articles}
             handleArticleSearchSubmit={this.handleArticleSearchSubmit}
             handleArticleSearchInput={this.handleArticleSearchInput}
-            handleArticleClearSubmit={this.handleArticleClearSubmit}
-            searchCriteria={{id, author, title }}
+            handleArticleSearchClear={this.handleArticleSearchClear}
+            handleArticleAddSubmit={this.handleArticleAddSubmit}
+            handleArticleAddClear={this.handleArticleAddClear}
+            handleArticleAddInput={this.handleArticleAddInput}
+            searchCriteria={{searchid, searchauthor, searchtitle }}
+            addCriteria={{addauthor, addtitle, addtopic}}
           />
           <Authors path="/authors" />
           <Topics path="/topics" topics={topics} />
@@ -94,45 +101,45 @@ class App extends Component {
 
   handleArticleSearchSubmit = event => {
     event.preventDefault();
-    console.log(event, "<--submit event");
-
-    // this.setState(state => {...this.setState});
+    console.log(event, "<--search submit event");
   };
 
   handleArticleSearchInput = event => {
-    console.log(this.state.articleSearch, "<--current articleSearch");
-    // assign articleSearch to new variable
-    const search = this.state.articleSearch;
-
-    // capture the name and value off the event.target
-    console.log(search, "<--old search");
     const { name, value } = event.target;
-
-    console.log(
-      name,
-      "<--search key",
-      value,
-      "<--search value"
-    );
-
-    // set state to updated search object
     this.setState({
       [name]: value
     });
   };
 
-  handleArticleClearSubmit = event => {
+  handleArticleSearchClear = event => {
     event.preventDefault();
-    console.log(event, "<--clear event");
-    const articleSearch = this.state.articleSearch;
-    const { id, author, title } = this.state;
-
     this.setState({
-        id: "",
-        author: "",
-        title: ""
+        searchid: "",
+        searchauthor: "",
+        searchtitle: ""
     });
   };
+
+  handleArticleAddSubmit = event => {
+    event.preventDefault();
+    console.log(event, "<--search submit event");
+  }
+
+  handleArticleAddInput = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  }
+
+  handleArticleAddClear = event => {
+    event.preventDefault();
+    this.setState({
+        addtitle: "",
+        addauthor: "",
+        addtopic: ""
+    });
+  }
 }
 
 export default App;
