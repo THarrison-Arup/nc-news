@@ -42,14 +42,18 @@ class Articles extends Component {
           handleArticleSearchClear={this.handleArticleSearchClear}
           searchCriteria={{ searchid, searchauthor, searchtitle }}
         />
-        <ArticlesSearchResponse articleData={this.state.articleData} />
+        <ArticlesSearchResponse 
+         articleData={this.state.articleData} 
+        />
         <ArticlesAdderForm
           handleArticleAddSubmit={this.handleArticleAddSubmit}
           handleArticleAddClear={this.handleArticleAddClear}
           handleArticleAddInput={this.handleArticleAddInput}
           addCriteria={{ addauthor, addtitle, addtopic }}
         />
-        <ArticlesAdderRepsonse />
+        <ArticlesAdderRepsonse 
+          
+        />
       </div>
     );
   }

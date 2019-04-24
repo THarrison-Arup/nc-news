@@ -6,7 +6,7 @@ const ArticlesAdderForm = ({
   handleArticleAddInput,
   addCriteria
 }) => {
-  const { addauthor, addtitle, addtopic } = addCriteria;
+  const { addauthor, addtitle, addbody, addtopic } = addCriteria;
 
   return (
     <form className="Articles-Add-Form">
@@ -25,6 +25,14 @@ const ArticlesAdderForm = ({
         name="addauthor"
         value={addauthor}
         placeholder="Article Author..."
+        onChange={event => handleArticleAddInput(event)}
+      />
+      <input
+        id="Articles-Add-Body"
+        type="text"
+        name="addbody"
+        value={addbody}
+        placeholder="Article Body..."
         onChange={event => handleArticleAddInput(event)}
       />
       <input
