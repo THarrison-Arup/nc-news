@@ -3,7 +3,7 @@ import React from "react";
 const ArticlesAdderForm = ({}) => {
   return (
     <form className="Articles-Add-Form">
-      <h2>Add an Article!</h2>
+      <h3>Add an Article!</h3>
       <input
         id="Articles-Add-Title"
         type="text"

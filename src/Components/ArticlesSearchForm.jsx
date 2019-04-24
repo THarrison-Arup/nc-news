@@ -8,7 +8,7 @@ const ArticlesSearchForm = ({
 
   return (
     <form className="Articles-Search-Form">
-      <h2>Use the search criteria below...</h2>
+      <h3>Use the search criteria below...</h3>
       <input
         id="Articles-Search-ID"
         name="searchid"
