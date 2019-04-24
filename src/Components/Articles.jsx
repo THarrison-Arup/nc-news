@@ -59,7 +59,8 @@ class Articles extends Component {
   handleArticleSearchSubmit = event => {
     event.preventDefault();
     const { searchid, searchauthor, searchtitle } = this.state;
-    const articleData = api
+
+    api
       .fetchArticleBySearch(searchid, searchauthor, searchtitle)
       .then(articleData => {
         console.log(articleData.article);
