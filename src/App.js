@@ -13,13 +13,6 @@ import "./App.css";
 
 class App extends Component {
   state = {
-    searchid: "",
-    searchtitle: "",
-    searchauthor: "",
-    addtitle: "",
-    addauthor: "",
-    addtopic: "",
-    articleData: {},
     articles: [
       {
         article_id: 34,
@@ -59,7 +52,7 @@ class App extends Component {
   };
 
   render() {
-    const { articles, topics, searchid, searchauthor, searchtitle, addauthor, addtitle, addtopic } = this.state;
+    const { articles, topics } = this.state;
     return (
       <div className="App">
         <Header />
@@ -68,19 +61,7 @@ class App extends Component {
 
         <Router className="Main">
           <Home path="/" />
-          <Articles
-            path="/articles"
-            articles={articles}
-            handleArticleSearchSubmit={this.handleArticleSearchSubmit}
-            handleArticleSearchInput={this.handleArticleSearchInput}
-            handleArticleSearchClear={this.handleArticleSearchClear}
-            handleArticleAddSubmit={this.handleArticleAddSubmit}
-            handleArticleAddClear={this.handleArticleAddClear}
-            handleArticleAddInput={this.handleArticleAddInput}
-            searchCriteria={{searchid, searchauthor, searchtitle }}
-            addCriteria={{addauthor, addtitle, addtopic}}
-            articleData={this.state.articleData}
-          />
+          <Articles path="/articles" articles={articles} />
           <Authors path="/authors" />
           <Topics path="/topics" topics={topics} />
         </Router>
@@ -98,58 +79,6 @@ class App extends Component {
   //   });
   //   console.log(this.state,'<-- state');
   // };
-
-  // componentDidUpdate = async () => {
-  //   const articleData = await api.fetchArticleBySearch(searchid, searchauthor, searchtitle)
-  // }
-
-  handleArticleSearchSubmit = event => {
-    event.preventDefault();
-    const { searchid, searchauthor, searchtitle } = this.state;
-    const articleData = api.fetchArticleBySearch(searchid, searchauthor, searchtitle)
-    .then(articleData => {
-      console.log(articleData.article)
-      this.setState({
-        articleData
-      })
-    })
-  };
-
-  handleArticleSearchInput = event => {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
-  };
-
-  handleArticleSearchClear = event => {
-    event.preventDefault();
-    this.setState({
-        searchid: "",
-        searchauthor: "",
-        searchtitle: ""
-    });
-  };
-
-  handleArticleAddSubmit = event => {
-    event.preventDefault();
-  }
-
-  handleArticleAddInput = event => {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
-  }
-
-  handleArticleAddClear = event => {
-    event.preventDefault();
-    this.setState({
-        addtitle: "",
-        addauthor: "",
-        addtopic: ""
-    });
-  }
 }
 
 export default App;

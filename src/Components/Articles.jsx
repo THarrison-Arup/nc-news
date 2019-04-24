@@ -1,117 +1,108 @@
-import React from "react";
+import React, { Component } from "react";
+import * as api from "../api";
 import "./css/Main.css";
+import ArticlesSearchForm from "./ArticlesSearchForm";
+import ArticlesSearchResponse from "./ArticlesSearchResponse";
+import ArticlesAdderForm from "./ArticlesAdderForm";
+import ArticlesAdderRepsonse from "./ArticlesAdderResponse";
 
-const Articles = ({
-  articles,
-  handleArticleSearchSubmit,
-  handleArticleSearchInput,
-  handleArticleSearchClear,
-  searchCriteria,
-  handleArticleAddSubmit,
-  handleArticleAddClear,
-  handleArticleAddInput,
-  addCriteria,
-  articleData
-}) => {
-  const articleList = articles;
-  const { searchid, searchauthor, searchtitle } = searchCriteria;
-  const { addtitle, addauthor, addtopic } = addCriteria;
-  const { article } = articleData;
-  console.log(articleData, 'articleData')
+class Articles extends Component {
+  state = {
+    searchCriteria: {},
+    searchid: "",
+    searchtitle: "",
+    searchauthor: "",
+    addtitle: "",
+    addauthor: "",
+    addtopic: "",
+    articleData: {}
+  };
 
-  return (
-    <main className="Main-Articles">
-      <form className="Articles-Search-Form">
-        <h2>Use the search criteria below...</h2>
-        <input
-          id="Articles-Search-ID"
-          name="searchid"
-          type="text"
-          value={searchid}
-          placeholder="Article ID..."
-          onChange={event => handleArticleSearchInput(event)}
+  render() {
+    const {
+      searchid,
+      searchauthor,
+      searchtitle,
+      addauthor,
+      addtitle,
+      addtopic
+    } = this.state;
+
+    // const articleList = articles;
+    // const { searchid, searchauthor, searchtitle } = searchCriteria;
+    // const { addtitle, addauthor, addtopic } = addCriteria;
+    // const { article } = articleData;
+    // console.log(articleData, 'articleData')
+
+    return (
+      <div className="Main-Articles">
+        <ArticlesSearchForm
+          handleArticleSearchSubmit={this.handleArticleSearchSubmit}
+          handleArticleSearchInput={this.handleArticleSearchInput}
+          handleArticleSearchClear={this.handleArticleSearchClear}
+          searchCriteria={{ searchid, searchauthor, searchtitle }}
         />
-        <input
-          id="Articles-Search-Title"
-          name="searchtitle"
-          type="text"
-          value={searchtitle}
-          placeholder="Article Title..."
-          onChange={event => handleArticleSearchInput(event)}
+        <ArticlesSearchResponse articleData={this.state.articleData} />
+        <ArticlesAdderForm
+          handleArticleAddSubmit={this.handleArticleAddSubmit}
+          handleArticleAddClear={this.handleArticleAddClear}
+          handleArticleAddInput={this.handleArticleAddInput}
+          addCriteria={{ addauthor, addtitle, addtopic }}
         />
-        <input
-          id="Articles-Search-Author"
-          name="searchauthor"
-          type="text"
-          value={searchauthor}
-          placeholder="Article Author..."
-          onChange={event => handleArticleSearchInput(event)}
-        />
-        <button
-          id="Articles-Search-Submit"
-          type="submit"
-          onClick={event => handleArticleSearchSubmit(event)}
-        >
-          Search
-        </button>
-        <button
-          id="Articles-Search-Clear"
-          type="submit"
-          onClick={event => handleArticleSearchClear(event)}
-        >
-          Clear Search
-        </button>
-        <ul className="Articles-Search-Results">
-          <h3>Search Results</h3>
-          <li>{article ? article.title : ""}</li>
-        </ul>
-      </form>
-      <form className="Articles-Add-Form">
-        <h2>Add an Article!</h2>
-        <input
-          id="Articles-Add-Title"
-          type="text"
-          name="addtitle"
-          value={addtitle}
-          placeholder="Article Title..."
-          onChange={event => handleArticleAddInput(event)}
-        />
-        <input
-          id="Articles-Add-Author"
-          type="text"
-          name="addauthor"
-          value={addauthor}
-          placeholder="Article Author..."
-          onChange={event => handleArticleAddInput(event)}
-        />
-        <input
-          id="Articles-Add-Topic"
-          type="text"
-          name="addtopic"
-          value={addtopic}
-          placeholder="Article Topic..."
-          onChange={event => handleArticleAddInput(event)}
-        />
-        <button
-          id="Articles-Add-Submit"
-          type="submit"
-          onClick={event => handleArticleAddSubmit(event)}
-        >
-          Add Article
-        </button>
-        <button
-          id="Articles-Add-Clear"
-          type="submit"
-          onClick={event => handleArticleAddClear(event)}
-        >
-          Clear Article
-        </button>
-        <ul className="Articles-Add-Results">
-          <h3>Server Response Window</h3>
-        </ul>
-      </form>
-    </main>
-  );
-};
+        <ArticlesAdderRepsonse />
+      </div>
+    );
+  }
+
+  // Functions...
+  handleArticleSearchSubmit = event => {
+    event.preventDefault();
+    const { searchid, searchauthor, searchtitle } = this.state;
+    const articleData = api
+      .fetchArticleBySearch(searchid, searchauthor, searchtitle)
+      .then(articleData => {
+        console.log(articleData.article);
+        this.setState({
+          articleData
+        });
+      });
+  };
+
+  handleArticleSearchInput = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
+
+  handleArticleSearchClear = event => {
+    event.preventDefault();
+    this.setState({
+      searchid: "",
+      searchauthor: "",
+      searchtitle: ""
+    });
+  };
+
+  handleArticleAddSubmit = event => {
+    event.preventDefault();
+  };
+
+  handleArticleAddInput = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
+
+  handleArticleAddClear = event => {
+    event.preventDefault();
+    this.setState({
+      addtitle: "",
+      addauthor: "",
+      addtopic: ""
+    });
+  };
+}
 
 export default Articles;
