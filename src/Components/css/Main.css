@@ -22,7 +22,7 @@
   grid-row: 1/2;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 0.5fr 0.5fr 0.5fr;
 }
 
 .Articles-Search-Repsonse {
@@ -63,8 +63,13 @@
   grid-column: 1 / 2;
 }
 
-#Articles-Search-Clear {
+#Articles-Search-Clear-Inputs {
   grid-row: 6 / 7;
+  grid-column: 1 / 2;
+}
+
+#Articles-Search-Clear-Results {
+  grid-row: 7 / 8;
   grid-column: 1 / 2;
 }
 

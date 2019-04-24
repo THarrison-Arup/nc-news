@@ -39,21 +39,18 @@ class Articles extends Component {
         <ArticlesSearchForm
           handleArticleSearchSubmit={this.handleArticleSearchSubmit}
           handleArticleSearchInput={this.handleArticleSearchInput}
-          handleArticleSearchClear={this.handleArticleSearchClear}
+          handleArticleSearchClearInputs={this.handleArticleSearchClearInputs}
+          handleArticleSearchClearResults={this.handleArticleSearchClearResults}
           searchCriteria={{ searchid, searchauthor, searchtitle }}
         />
-        <ArticlesSearchResponse 
-         articleData={this.state.articleData} 
-        />
+        <ArticlesSearchResponse articleData={this.state.articleData} />
         <ArticlesAdderForm
           handleArticleAddSubmit={this.handleArticleAddSubmit}
           handleArticleAddClear={this.handleArticleAddClear}
           handleArticleAddInput={this.handleArticleAddInput}
           addCriteria={{ addauthor, addtitle, addtopic }}
         />
-        <ArticlesAdderRepsonse 
-          
-        />
+        <ArticlesAdderRepsonse />
       </div>
     );
   }
@@ -79,12 +76,19 @@ class Articles extends Component {
     });
   };
 
-  handleArticleSearchClear = event => {
+  handleArticleSearchClearInputs = event => {
     event.preventDefault();
     this.setState({
       searchid: "",
       searchauthor: "",
       searchtitle: ""
+    });
+  };
+
+  handleArticleSearchClearResults = event => {
+    event.preventDefault();
+    this.setState({
+      articleData: {}
     });
   };
 

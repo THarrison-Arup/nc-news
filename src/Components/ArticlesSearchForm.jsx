@@ -3,7 +3,8 @@ import React from "react";
 const ArticlesSearchForm = ({
   handleArticleSearchSubmit,
   handleArticleSearchInput,
-  handleArticleSearchClear,
+  handleArticleSearchClearInputs,
+  handleArticleSearchClearResults,
   searchCriteria
 }) => {
   const { searchauthor, searchid, searchtitle } = searchCriteria;
@@ -43,11 +44,18 @@ const ArticlesSearchForm = ({
         Search
       </button>
       <button
-        id="Articles-Search-Clear"
+        id="Articles-Search-Clear-Inputs"
         type="submit"
-        onClick={event => handleArticleSearchClear(event)}
+        onClick={event => handleArticleSearchClearInputs(event)}
       >
         Clear Search
+      </button>
+      <button
+        id="Articles-Search-Clear-Results"
+        type="subtmit"
+        onClick={event => handleArticleSearchClearResults(event)}
+      >
+        Clear Results
       </button>
     </form>
   );
