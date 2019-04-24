@@ -4,12 +4,20 @@ import Footer from "./Components/Footer";
 import Nav from "./Components/Nav";
 import Logo from "./Components/Logo";
 // import * as api from "./api";
-// import { Router } from '@reach/router';
+import { Router } from "@reach/router";
+import Home from "./Components/Home";
+import Articles from "./Components/Articles";
+import Authors from "./Components/Authors";
+import Topics from "./Components/Topics";
 
 import "./App.css";
+import { updateExpression } from "@babel/types";
 
 class App extends Component {
   state = {
+    id: "",
+    title: "",
+    author: "",
     articles: [
       {
         article_id: 34,
@@ -49,13 +57,26 @@ class App extends Component {
   };
 
   render() {
+    const { articles, topics, id, author, title } = this.state;
     return (
       <div className="App">
         <Header />
-        <Nav topics={this.state.topics} articles={this.state.articles}/>
+        <Nav topics={topics} articles={articles} />
         <Logo />
 
-        {/* <Router className="Main"/> */}
+        <Router className="Main">
+          <Home path="/" />
+          <Articles
+            path="/articles"
+            articles={articles}
+            handleArticleSearchSubmit={this.handleArticleSearchSubmit}
+            handleArticleSearchInput={this.handleArticleSearchInput}
+            handleArticleClearSubmit={this.handleArticleClearSubmit}
+            searchCriteria={{id, author, title }}
+          />
+          <Authors path="/authors" />
+          <Topics path="/topics" topics={topics} />
+        </Router>
         <Footer />
       </div>
     );
@@ -70,6 +91,48 @@ class App extends Component {
   //   });
   //   console.log(this.state,'<-- state');
   // };
+
+  handleArticleSearchSubmit = event => {
+    event.preventDefault();
+    console.log(event, "<--submit event");
+
+    // this.setState(state => {...this.setState});
+  };
+
+  handleArticleSearchInput = event => {
+    console.log(this.state.articleSearch, "<--current articleSearch");
+    // assign articleSearch to new variable
+    const search = this.state.articleSearch;
+
+    // capture the name and value off the event.target
+    console.log(search, "<--old search");
+    const { name, value } = event.target;
+
+    console.log(
+      name,
+      "<--search key",
+      value,
+      "<--search value"
+    );
+
+    // set state to updated search object
+    this.setState({
+      [name]: value
+    });
+  };
+
+  handleArticleClearSubmit = event => {
+    event.preventDefault();
+    console.log(event, "<--clear event");
+    const articleSearch = this.state.articleSearch;
+    const { id, author, title } = this.state;
+
+    this.setState({
+        id: "",
+        author: "",
+        title: ""
+    });
+  };
 }
 
 export default App;

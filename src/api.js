@@ -13,3 +13,9 @@ export const fetchTopics = async () => {
   );
   return data.topics;
 };
+
+export const fetchArticleBySearch = async (articleSearch) => {
+  const { } = articleSearch;
+  const { data } = await axios.get("https://nc-news-sql-tharrison.herokuapp.com/api/articles");
+  return data.articles;
+}
