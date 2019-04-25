@@ -15,7 +15,7 @@ class Article extends Component {
 
     return (
       <div className="Main-Article">
-        <h2>Article Title Goes Here!</h2>
+        <h2>{article.title}</h2>
         <ArticleInformation article={article} />
         <ArticleComments />
       </div>

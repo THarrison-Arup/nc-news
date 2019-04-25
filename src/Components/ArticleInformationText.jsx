@@ -5,9 +5,11 @@ const ArticleInformationText = (props) => {
   return (
     <div className="Article-Information-Text">
       <p>
-        Article Text
-        
-        {article.body}
+        <h3>Author</h3>
+        {article.author}
+        <h3>Topic</h3>
+        {article.topic}
+        <h4>{article.body}</h4>
       </p>
     </div>
   );
