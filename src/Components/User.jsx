@@ -12,6 +12,7 @@ const User = (props) => {
       <button className="header-User-Logout" type="submit" onclick>Logout</button>
     </div>
   );
+  
 };
 
 export default User;

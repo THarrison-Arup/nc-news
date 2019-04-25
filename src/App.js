@@ -88,7 +88,6 @@ class App extends Component {
   // };
 
   login = username => {
-    console.log(username,'<--username');
     api.fetchUserData(username)
     .then(user => {
       this.setState({

@@ -29,7 +29,10 @@ class Article extends Component {
           clearCommentInput={this.handleArticleCommentClear}
           commentValues={{commentAuthor, commentBody}}
         />
-        <ArticleVotes article={article}/>
+        <ArticleVotes
+          article={article}
+          incVotes={this.incVotes}
+          />
       </div>
     );
   }
@@ -71,6 +74,11 @@ class Article extends Component {
       commentBody: ""
     })
   }
+
+  incVotes = (article, inc) => event => {
+    event.preventDefault();
+    console.log(article, inc);
+  };
 
   componentDidMount = async () => {
     const articleData = this.getArticleInformation(this.props.article_id);

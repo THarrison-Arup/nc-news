@@ -36,3 +36,8 @@ export const fetchUserData = async (username) => {
   const { data } = await axios.get(`${BASE_URL}/users/${username}`);
   return data.user;
 }
+
+export const updateArticleVotes = async (id, inc) => {
+  const { data } = await axios.patch(`${BASE_URL}/articles/${id}`, {votes: inc);
+  return data.article;
+}
