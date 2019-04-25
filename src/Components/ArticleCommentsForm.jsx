@@ -2,7 +2,8 @@ import React from 'react';
 
 const ArticleCommentsForm = (props) => {
 
-  const {article, submitComment, clearCommentInput} = props;
+  const {article, commentInput, submitComment, clearCommentInput, commentValues} = props;
+  const {commentAuthor, commentBody} = commentValues;
 
   return (
     <form className="Article-Comments-Form">
@@ -10,19 +11,26 @@ const ArticleCommentsForm = (props) => {
       <input
         id="Article-Comments-Form-Author"
         type="text"
+        name="commentAuthor"
+        value={commentAuthor}
         placeholder="Comment Author..."
+        onChange={event => commentInput(event)}
         >
       </input>
       <input
         id="Article-Comments-Form-Article_Id"
-        type="number"
+        type="text"
+        name="commentArticleId"
         value={article.article_id}
       >
       </input>
       <textarea
         id="Article-Comments-Form-Body"
         type="text"
+        name="commentBody"
+        value={commentBody}
         placeholder="Comment Body..."
+        onChange={event => commentInput(event)}
         >
       </textarea>
       <button

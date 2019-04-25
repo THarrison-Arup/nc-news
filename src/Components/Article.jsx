@@ -7,10 +7,13 @@ import ArticleComments from "./ArticleComments";
 class Article extends Component {
   state = {
     article: {},
-    comments: []
+    comments: [],
+    commentAuthor: '',
+    commentBody: '',
+    commentArticleId: ''
   };
   render() {
-    const { article, comments } = this.state;
+    const { article, comments, commentAuthor, commentBody } = this.state;
     const { location, article_id } = this.props;
     const { pathname } = location;
 
@@ -20,8 +23,10 @@ class Article extends Component {
         <ArticleInformation article={article} comments={comments}/>
         <ArticleComments 
           article={article}
+          commentInput={this.handleCommentInput}
           submitComment={this.handleArticleCommentSubmit}
           clearCommentInput={this.handleArticleCommentClear}
+          commentValues={{commentAuthor, commentBody}}
         />
       </div>
     );
@@ -46,12 +51,24 @@ class Article extends Component {
     })
   }
 
+  handleCommentInput = event => {
+    const { name, value } = event.target;
+    console.log(name, value);
+    this.setState({
+      [name]: value
+    });
+  };
+
   handleArticleCommentSubmit = event => {
     event.preventDefault();
   }
   
   handleArticleCommentClear = event => {
     event.preventDefault();
+    this.setState({
+      commentAuthor: "",
+      commentBody: ""
+    })
   }
 
   componentDidMount = async () => {
