@@ -18,7 +18,11 @@ class Article extends Component {
       <div className="Main-Article">
         <h2>{article.title}</h2>
         <ArticleInformation article={article} comments={comments}/>
-        <ArticleComments article={article}/>
+        <ArticleComments 
+          article={article}
+          submitComment={this.handleArticleCommentSubmit}
+          clearCommentInput={this.handleArticleCommentClear}
+        />
       </div>
     );
   }
@@ -40,6 +44,14 @@ class Article extends Component {
         comments
       })
     })
+  }
+
+  handleArticleCommentSubmit = event => {
+    event.preventDefault();
+  }
+  
+  handleArticleCommentClear = event => {
+    event.preventDefault();
   }
 
   componentDidMount = async () => {

@@ -2,7 +2,7 @@ import React from 'react';
 
 const ArticleCommentsForm = (props) => {
 
-  const {article} = props;
+  const {article, submitComment, clearCommentInput} = props;
 
   return (
     <form className="Article-Comments-Form">
@@ -28,13 +28,13 @@ const ArticleCommentsForm = (props) => {
       <button
         id="Article-Comments-Form-Submit"
         type="submit"
-        onClick=""
+        onClick={submitComment}
       > Submit Comment
       </button>
       <button
         id="Article-Comments-Form-Clear"
         type="submit"
-        onClick=""
+        onClick={clearCommentInput}
       > Clear Inputs
       </button>
     </form>

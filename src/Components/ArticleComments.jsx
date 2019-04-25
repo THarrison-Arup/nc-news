@@ -4,11 +4,15 @@ import ArticleCommentsResponse from './ArticleCommentsResponse';
 
 const ArticleCommentAdder = (props) => {
   
-  const {article} = props;
+  const {article, submitComment, clearCommentInput} = props;
   
   return (
     <div className="Article-Comments">
-      <ArticleCommentsForm article={article}/>
+      <ArticleCommentsForm 
+        article={article}
+        submitComment={submitComment} 
+        clearCommentInput={clearCommentInput}
+      />
       <ArticleCommentsResponse />
     </div>
   );
