@@ -62,7 +62,7 @@ class App extends Component {
         <Header />
         <Nav topics={topics} articles={articles} />
         <Logo />
-        <Auth user={user} login={this.login}>
+        {/* <Auth user={user} login={this.login}> */}
           <Router className="Main">
             <Home path="/" />
             <Articles path="/articles" articles={articles} />
@@ -71,7 +71,7 @@ class App extends Component {
             <Topics path="/topics" topics={topics} />
             <Topic path="/topics/:topic" />
           </Router>
-        </Auth>
+        {/* </Auth> */}
         <Footer />
       </div>
     );

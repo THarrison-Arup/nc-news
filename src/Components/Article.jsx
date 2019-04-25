@@ -3,6 +3,7 @@ import * as api from "../api";
 import "./css/MainArticle.css";
 import ArticleInformation from "./ArticleInformation";
 import ArticleComments from "./ArticleComments";
+import ArticleVotes from './ArticleVotes';
 
 class Article extends Component {
   state = {
@@ -28,6 +29,7 @@ class Article extends Component {
           clearCommentInput={this.handleArticleCommentClear}
           commentValues={{commentAuthor, commentBody}}
         />
+        <ArticleVotes />
       </div>
     );
   }
