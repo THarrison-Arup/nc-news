@@ -28,12 +28,6 @@ class Articles extends Component {
       addtopic
     } = this.state;
 
-    // const articleList = articles;
-    // const { searchid, searchauthor, searchtitle } = searchCriteria;
-    // const { addtitle, addauthor, addtopic } = addCriteria;
-    // const { article } = articleData;
-    // console.log(articleData, 'articleData')
-
     return (
       <div className="Main-Articles">
         <ArticlesSearchForm

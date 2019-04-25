@@ -9,6 +9,7 @@ import Home from "./Components/Home";
 import Articles from "./Components/Articles";
 import Authors from "./Components/Authors";
 import Topics from "./Components/Topics";
+import Article from "./Components/Article";
 import "./App.css";
 
 class App extends Component {
@@ -62,6 +63,7 @@ class App extends Component {
         <Router className="Main">
           <Home path="/" />
           <Articles path="/articles" articles={articles} />
+          <Article path="/articles/*" />
           <Authors path="/authors" />
           <Topics path="/topics" topics={topics} />
         </Router>
