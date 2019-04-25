@@ -47,3 +47,20 @@
   grid-column: 5 / 6;
   grid-row: 2 / 3;
 }
+
+.header-User {
+  border: 1px solid rgb(70, 255, 24);
+  background: rgb(70, 255, 24, 0.5);
+  grid-column: 5 / 6;
+  grid-row: 1 / 2;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr;
+  max-height: 10vh;
+  margin: 0;
+  padding: 0;
+}
+
+.header-User-Username {
+  margin:0;
+}

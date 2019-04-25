@@ -29,7 +29,7 @@ class Article extends Component {
           clearCommentInput={this.handleArticleCommentClear}
           commentValues={{commentAuthor, commentBody}}
         />
-        <ArticleVotes />
+        <ArticleVotes article={article}/>
       </div>
     );
   }
