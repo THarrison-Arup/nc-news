@@ -18,7 +18,7 @@ class Article extends Component {
       <div className="Main-Article">
         <h2>{article.title}</h2>
         <ArticleInformation article={article} comments={comments}/>
-        <ArticleComments />
+        <ArticleComments article={article}/>
       </div>
     );
   }

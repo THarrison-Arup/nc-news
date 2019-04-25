@@ -4,5 +4,5 @@
   height: 100vh;
   width: 100vw;
   grid-template-rows: 1fr 6fr 0.5fr; 
-  grid-template-columns: 2fr 5fr;
+  grid-template-columns: 3fr 10fr;
 }
