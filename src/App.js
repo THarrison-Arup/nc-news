@@ -10,6 +10,7 @@ import Articles from "./Components/Articles";
 import Authors from "./Components/Authors";
 import Topics from "./Components/Topics";
 import Article from "./Components/Article";
+import Topic from './Components/Topic';
 import "./App.css";
 
 class App extends Component {
@@ -66,6 +67,7 @@ class App extends Component {
           <Article path="/articles/:article_id" />
           <Authors path="/authors" />
           <Topics path="/topics" topics={topics} />
+          <Topic path="/topics/:topic" />
         </Router>
         <Footer />
       </div>

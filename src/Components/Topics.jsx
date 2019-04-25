@@ -1,5 +1,5 @@
 import React from 'react';
-import "./css/Main.css";
+import "./css/MainTopics.css"
 // import * as api from "../api";
 
 const Topics = () => {
