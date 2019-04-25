@@ -1,10 +1,14 @@
 import React from 'react';
 
-const ArticleInformationComments = () => {
+const ArticleInformationComments = (props) => {
+  const {comments} = props;
   return (
-    <div className="Article-Information-Comments">
-      Article Information Comments List Goes Here!
-    </div>
+    <ul className="Article-Information-Comments">
+    <h3>Comments</h3>
+      {comments.map(comment => {
+        // return <li>{comment.body}</li>
+      })}
+    </ul>
   );
 };
 

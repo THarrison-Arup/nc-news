@@ -6,17 +6,18 @@ import ArticleComments from "./ArticleComments";
 
 class Article extends Component {
   state = {
-    article: {}
+    article: {},
+    comments: []
   };
   render() {
-    const { article } = this.state;
+    const { article, comments } = this.state;
     const { location, article_id } = this.props;
     const { pathname } = location;
 
     return (
       <div className="Main-Article">
         <h2>{article.title}</h2>
-        <ArticleInformation article={article} />
+        <ArticleInformation article={article} comments={comments}/>
         <ArticleComments />
       </div>
     );
@@ -32,8 +33,18 @@ class Article extends Component {
     })
   };
 
+  getArticleComments = article_id => {
+    api.fetchCommentsById(article_id)
+    .then(comments => {
+      this.setState({
+        comments
+      })
+    })
+  }
+
   componentDidMount = async () => {
-    const articleData = this.getArticleInformation(this.props.article_id)
+    const articleData = this.getArticleInformation(this.props.article_id);
+    const commentData = this.getArticleComments(this.props.article_id);
   }
 }
 
