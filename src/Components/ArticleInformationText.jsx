@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "@reach/router";
 
 const ArticleInformationText = (props) => {
   const {article} = props
@@ -7,7 +8,7 @@ const ArticleInformationText = (props) => {
         <h3>Author</h3>
         {article.author}
         <h3>Topic</h3>
-        {article.topic}
+        <Link to={`/topics/${article.topic}`}>{article.topic}</Link>
         <h4>{article.body}</h4>
     </div>
   );
