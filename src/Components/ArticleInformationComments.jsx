@@ -6,7 +6,7 @@ const ArticleInformationComments = (props) => {
     <ul className="Article-Information-Comments">
     <h3>Comments</h3>
       {comments.map(comment => {
-        // return <li>{comment.body}</li>
+        return <li>{comment.body}</li>
       })}
     </ul>
   );
