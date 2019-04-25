@@ -10,8 +10,8 @@ import Articles from "./Components/Articles";
 import Authors from "./Components/Authors";
 import Topics from "./Components/Topics";
 import Article from "./Components/Article";
-import Topic from './Components/Topic';
-import Auth from './Components/Auth';
+import Topic from "./Components/Topic";
+import Auth from "./Components/Auth";
 import "./App.css";
 
 class App extends Component {
@@ -51,25 +51,27 @@ class App extends Component {
         slug: "cooking",
         description: "Hey good looking, what you got cooking?"
       }
-    ]
+    ],
+    user: {}
   };
 
   render() {
-    const { articles, topics } = this.state;
+    const { articles, topics, user } = this.state;
     return (
       <div className="App">
         <Header />
         <Nav topics={topics} articles={articles} />
         <Logo />
-
-        <Router className="Main">
-          <Home path="/" />
-          <Articles path="/articles" articles={articles} />
-          <Article path="/articles/:article_id" />
-          <Authors path="/authors" />
-          <Topics path="/topics" topics={topics} />
-          <Topic path="/topics/:topic" />
-        </Router>
+        <Auth user={user} login={this.login}>
+          <Router className="Main">
+            <Home path="/" />
+            <Articles path="/articles" articles={articles} />
+            <Article path="/articles/:article_id" />
+            <Authors path="/authors" />
+            <Topics path="/topics" topics={topics} />
+            <Topic path="/topics/:topic" />
+          </Router>
+        </Auth>
         <Footer />
       </div>
     );
@@ -84,6 +86,17 @@ class App extends Component {
   //   });
   //   console.log(this.state,'<-- state');
   // };
+
+  login = username => {
+    console.log(username,'<--username');
+    api.fetchUserData(username)
+    .then(user => {
+      this.setState({
+       user
+      })
+    })
+  };
+
 }
 
 export default App;

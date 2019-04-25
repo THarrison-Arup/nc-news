@@ -31,3 +31,8 @@ export const fetchCommentsById = async (id) => {
   const { data } = await axios.get(`${BASE_URL}/comments?article_id=${id}`);
   return data.comments;
 }
+
+export const fetchUserData = async (username) => {
+  const { data } = await axios.get(`${BASE_URL}/users/${username}`);
+  return data.user;
+}

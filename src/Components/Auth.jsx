@@ -3,16 +3,21 @@ import "./css/Auth.css";
 
 class Auth extends Component {
   state = {
-    username: ""
+    username: "",
+    login: ""
   };
 
   render() {
-    const { username } = this.state;
+    const { username, login } = this.state;
+
+    const {user, children} = this.props;
 
     return (
+      !user.username 
+      ?
       <form className="Auth">
         <input
-          id="=username"
+          id="username"
           type="text"
           value={this.username}
           placeholder="Username"
@@ -26,12 +31,12 @@ class Auth extends Component {
           Login
         </button>
       </form>
+      : children
     );
   }
 
   handleChange = event => {
     const { id, value } = event.target;
-    console.log(id, value);
     this.setState({
       [id]: value
     });
@@ -39,7 +44,9 @@ class Auth extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    // const { username } = this.state;
+    const { username } = this.state;
+    console.log(username,'<--user');
+    this.props.login(username);
   };
 }
 
