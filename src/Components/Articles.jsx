@@ -57,7 +57,6 @@ class Articles extends Component {
     api
       .fetchArticleBySearch(searchid, searchauthor, searchtitle)
       .then(articleData => {
-        console.log(articleData.article);
         this.setState({
           articleData
         });

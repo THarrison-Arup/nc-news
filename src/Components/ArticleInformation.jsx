@@ -2,10 +2,13 @@ import React from 'react';
 import ArticleInformationText from './ArticleInformationText';
 import ArticleInformationComments from './ArticleInformationComments';
 
-const ArticleInformation = () => {
+const ArticleInformation = (props) => {
+  
+  const { article } = props
+
   return (
     <div className="Article-Information">
-      <ArticleInformationText />
+      <ArticleInformationText article={article}/>
       <ArticleInformationComments />
     </div>
   );

@@ -21,3 +21,8 @@ export const fetchArticleBySearch = async (id, author, title) => {
     return data;
   // }
 }
+
+export const fetchArticleById = async (id) => {
+  const { data } = await axios.get(`${BASE_URL}/articles/${id}`);
+  return data.article;
+}

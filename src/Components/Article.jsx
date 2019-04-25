@@ -5,18 +5,35 @@ import ArticleInformation from "./ArticleInformation";
 import ArticleComments from "./ArticleComments";
 
 class Article extends Component {
-  state = {};
+  state = {
+    article: {}
+  };
   render() {
-    const {} = this.state;
-    const {} = this.props;
+    const { article } = this.state;
+    const { location, article_id } = this.props;
+    const { pathname } = location;
 
     return (
       <div className="Main-Article">
         <h2>Article Title Goes Here!</h2>
-        <ArticleInformation />
+        <ArticleInformation article={article} />
         <ArticleComments />
       </div>
     );
+  }
+
+  //Functions...
+  getArticleInformation = article_id => {
+    api.fetchArticleById(article_id)
+    .then(article => {
+      this.setState({
+        article
+      })
+    })
+  };
+
+  componentDidMount = async () => {
+    const articleData = this.getArticleInformation(this.props.article_id)
   }
 }
 
