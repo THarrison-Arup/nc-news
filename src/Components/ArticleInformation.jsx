@@ -1,9 +1,12 @@
 import React from 'react';
+import ArticleInformationText from './ArticleInformationText';
+import ArticleInformationComments from './ArticleInformationComments';
 
 const ArticleInformation = () => {
   return (
     <div className="Article-Information">
-      Article Information Goes Here!
+      <ArticleInformationText />
+      <ArticleInformationComments />
     </div>
   );
 };
