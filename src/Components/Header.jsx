@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import './css/Header.css';
-import { Link } from '@reach/router'
+import { Link } from '@reach/router';
+import Auth from '../Components/Auth';
 
 class Header extends Component {
 
@@ -13,6 +14,7 @@ class Header extends Component {
         <Link className="header-Articles" to="/articles">Articles</Link>
         <Link className="header-Topics" to="/topics">Topics</Link>
         <Link className="header-MyProfile" to="">My Profile</Link>
+        <Auth />
       </div>
     );
   }

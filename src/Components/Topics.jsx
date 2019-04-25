@@ -4,7 +4,7 @@ import "./css/MainTopics.css"
 
 const Topics = () => {
   return (
-    <div>
+    <div className="Main-Topics">
       A load of Topics
     </div>
   );

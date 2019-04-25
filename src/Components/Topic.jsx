@@ -4,7 +4,7 @@ import "./css/MainTopic.css";
 
 const Topic = () => {
   return (
-    <div>
+    <div className="Main-Topic">
       Some information about a topic
     </div>
   );

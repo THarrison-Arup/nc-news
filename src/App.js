@@ -11,6 +11,7 @@ import Authors from "./Components/Authors";
 import Topics from "./Components/Topics";
 import Article from "./Components/Article";
 import Topic from './Components/Topic';
+import Auth from './Components/Auth';
 import "./App.css";
 
 class App extends Component {
