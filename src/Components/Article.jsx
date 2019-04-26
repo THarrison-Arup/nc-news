@@ -77,7 +77,12 @@ class Article extends Component {
 
   incVotes = (article, inc) => event => {
     event.preventDefault();
-    console.log(article, inc);
+    api.updateArticleVotes(article.article_id, inc)
+    .then(article => {
+      this.setState({
+        article
+      })
+    })
   };
 
   componentDidMount = async () => {
