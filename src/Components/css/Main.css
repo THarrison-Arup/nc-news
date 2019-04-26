@@ -14,7 +14,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  height: 80vh;
+  height: 85vh;
   margin: 0;
   padding: 0;
 }
@@ -27,7 +27,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 0.5fr 0.5fr 0.5fr;
-  height: 40vh;
+  height: 42vh;
   margin: 0;
   padding: 0;
 }
@@ -39,7 +39,7 @@
   padding: 0;
   grid-column: 2/3;
   grid-row: 1/2;
-  height: 40vh;
+  height: 42vh;
 }
 
 .Articles-Search-Results {
@@ -47,7 +47,7 @@
   background: rgb(50, 131, 253, 0.5);
   padding: 0em;
   margin: 0em;
-  height: 30vh;
+  height: 35vh;
 }
 
 #Articles-Search-ID {
@@ -88,7 +88,7 @@
   display: grid;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 0.5fr 0.5fr;
   grid-template-columns: 1fr;
-  height: 40vh;
+  height: 42vh;
   margin: 0;
   padding: 0;
 }
@@ -130,7 +130,7 @@
   padding: 0;
   grid-row: 2 / 7;
   grid-column: 2 / 3;
-  height: 40vh;
+  height: 42vh;
 }
 
 .Articles-Add-Results {
