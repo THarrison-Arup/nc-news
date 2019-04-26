@@ -7,16 +7,23 @@
   display: grid;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr;
+  height: 85vh;
+  margin: 0;
+  padding: 0;
 }
 
 .Nav-Home-Articles {
   border: 1px solid rgb(130, 184, 69);
-  padding: 0%;
+  padding: 0;
+  margin: 0;
   overflow-y: scroll;
+  height: 43vh;
 }
 
 .Nav-Home-Topics {
   border: 1px solid rgb(130, 184, 69);
   padding: 0%;
+  margin: 0;
   overflow-y: scroll;
+  height: 42vh;
 }

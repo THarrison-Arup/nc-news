@@ -3,9 +3,7 @@ import TopicCardArticles from "./TopicCardArticles";
 
 const TopicsWindow = props => {
   const { topics, articles } = props;
-
-  console.log(articles,'<<<<articles')
-
+  
   return (
     <ul className="Topics-Window">
       <h2>Topics</h2>

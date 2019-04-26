@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
+  height: 85vh;
 }
 
 .Main-Articles {
@@ -13,6 +14,9 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
+  height: 80vh;
+  margin: 0;
+  padding: 0;
 }
 
 .Articles-Search-Form {
@@ -23,24 +27,27 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 0.5fr 0.5fr 0.5fr;
+  height: 40vh;
+  margin: 0;
+  padding: 0;
 }
 
 .Articles-Search-Repsonse {
   border: 1px solid rgb(50, 223, 253);
   background: rgb(50, 223, 253, 0.5);
   margin: 0;
-  margin-left: 0.5em;
-  margin-right: 0.5em;
   padding: 0;
   grid-column: 2/3;
   grid-row: 1/2;
+  height: 40vh;
 }
 
 .Articles-Search-Results {
   border: 1px solid rgb(50, 131, 253);
   background: rgb(50, 131, 253, 0.5);
-  padding: 0.5em;
-  margin: 0.5em;
+  padding: 0em;
+  margin: 0em;
+  height: 30vh;
 }
 
 #Articles-Search-ID {
@@ -81,6 +88,9 @@
   display: grid;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 0.5fr 0.5fr;
   grid-template-columns: 1fr;
+  height: 40vh;
+  margin: 0;
+  padding: 0;
 }
 
 #Articles-Add-Title {
@@ -117,16 +127,16 @@
   border: 1px solid rgb(253, 50, 84);
   background: rgb(253, 50, 84, 0.5);
   margin: 0;
-  margin-left: 0.5em;
-  margin-right: 0.5em;
   padding: 0;
   grid-row: 2 / 7;
   grid-column: 2 / 3;
+  height: 40vh;
 }
 
 .Articles-Add-Results {
   border: 1px solid rgb(253, 50, 50);
   background: rgb(253, 50, 50, 0.5);
-  padding: 0.5em;
-  margin: 0.5em;
+  padding: 0em;
+  margin: 0em;
+  height: 30vh;
 }

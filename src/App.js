@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
-// import Nav from "./Components/Nav";
+import Nav from "./Components/Nav";
 import Logo from "./Components/Logo";
 import * as api from "./api";
 import { Router } from "@reach/router";
@@ -60,7 +60,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header user={user} />
-        {/* <Nav topics={topics} articles={articles} /> */}
+        <Nav topics={topics} articles={articles} />
         <Logo />
         <Auth user={user} login={this.login}>
           <Router className="Main">
@@ -71,6 +71,7 @@ class App extends Component {
             <Topics
               path="/topics"
               topics={topics}
+              articles={articles}
               />
             <Topic path="/topics/:topic" />
           </Router>

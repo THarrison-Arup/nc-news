@@ -7,6 +7,9 @@
   display: grid;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  height: 10vh;
+  margin: 0;
+  padding: 0;
 }
 
 .header-Header {
@@ -15,6 +18,7 @@
   grid-row: 1 / 2;
   vertical-align: middle;
   text-align: left;
+  margin: 0;
   margin-left: 2em;
 }
 
