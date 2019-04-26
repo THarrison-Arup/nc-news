@@ -15,7 +15,7 @@ class Articles extends Component {
     addtitle: "",
     addauthor: "",
     addtopic: "",
-    articleData: {}
+    articleData: []
   };
 
   render() {
@@ -52,14 +52,15 @@ class Articles extends Component {
   // Functions...
   handleArticleSearchSubmit = event => {
     event.preventDefault();
-    const { searchid, searchauthor, searchtitle } = this.state;
+    const { searchid, searchauthor, searchtitle, articleData } = this.state;
 
     api
       .fetchArticleBySearch(searchid, searchauthor, searchtitle)
-      .then(articleData => {
-        this.setState({
-          articleData
-        });
+      .then(articles => {
+        console.log(articles)
+        this.setState(({articleData}) => ({
+          articleData: [...articleData, ...articles]
+        }));
       });
   };
 

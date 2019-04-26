@@ -13,13 +13,13 @@ export const fetchTopics = async () => {
 };
 
 export const fetchArticleBySearch = async (id, author, title) => {
-  // if (author || title) {
-  //   const { data } = await axios.get(`${BASE_URL}/articles/${id}?author=${author}&title=${title}`);
-  //   return data.articles;
-  // } else {
+  if (author || title) {
+    const { data } = await axios.get(`${BASE_URL}/articles/${id}`, {params: {author: author, title: title}});
+    return data.articles;
+  } else {
     const { data } = await axios.get(`${BASE_URL}/articles/${id}`);
-    return data;
-  // }
+    return [data.article];
+  }
 }
 
 export const fetchArticleById = async (id) => {
