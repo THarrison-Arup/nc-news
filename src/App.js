@@ -71,7 +71,6 @@ class App extends Component {
             <Topics
               path="/topics"
               topics={topics}
-              articles={articles}
               />
             <Topic path="/topics/:topic" />
           </Router>
