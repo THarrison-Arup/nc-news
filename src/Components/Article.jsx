@@ -11,10 +11,11 @@ class Article extends Component {
     comments: [],
     commentAuthor: '',
     commentBody: '',
-    commentArticleId: ''
+    commentArticleId: '',
+    commentRepsonse: {}
   };
   render() {
-    const { article, comments, commentAuthor, commentBody } = this.state;
+    const { article, comments, commentAuthor, commentBody, commentResponse } = this.state;
 
     return (
       <div className="Main-Article">
@@ -26,6 +27,7 @@ class Article extends Component {
           submitComment={this.handleArticleCommentSubmit}
           clearCommentInput={this.handleArticleCommentClear}
           commentValues={{commentAuthor, commentBody}}
+          commentRespons={commentResponse}
         />
         <ArticleVotes
           article={article}
@@ -43,6 +45,16 @@ class Article extends Component {
         article
       })
     })
+    .catch(err => {
+      this.props.navigate('/error', {
+        replace: true,
+        state: {
+          code: err.code,
+          message: err.message,
+          from: '/articles'
+        }
+      })
+    });
   };
 
   getArticleComments = article_id => {
@@ -52,6 +64,16 @@ class Article extends Component {
         comments
       })
     })
+    .catch(err => {
+      this.props.navigate('/error', {
+        replace: true,
+        state: {
+          code: err.code,
+          message: err.message,
+          from: '/articles'
+        }
+      })
+    });
   }
 
   handleCommentInput = event => {
@@ -62,7 +84,27 @@ class Article extends Component {
   };
 
   handleArticleCommentSubmit = event => {
+    const {commentAuthor, commentArticleId, commentBody} = this.state;
+    const comment = {author: commentAuthor, body: commentBody };
+
     event.preventDefault();
+
+    api.sendArticleComment(commentArticleId, comment)
+    .then(commentResponse => {
+      this.setState({
+        commentResponse
+      })
+    })
+    .catch(err => {
+      this.props.navigate('/error', {
+        replace: true,
+        state: {
+          code: err.code,
+          message: err.message,
+          from: '/articles'
+        }
+      })
+    });
   }
   
   handleArticleCommentClear = event => {
@@ -81,6 +123,16 @@ class Article extends Component {
         article
       })
     })
+    .catch(err => {
+      this.props.navigate('/error', {
+        replace: true,
+        state: {
+          code: err.code,
+          message: err.message,
+          from: '/articles'
+        }
+      })
+    });
   };
 
   componentDidMount = async () => {

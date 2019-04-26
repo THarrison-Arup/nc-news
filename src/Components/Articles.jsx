@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, navigate } from "react";
 import * as api from "../api";
 import "./css/Main.css";
 import ArticlesSearchForm from "./ArticlesSearchForm";

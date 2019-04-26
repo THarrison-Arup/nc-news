@@ -46,3 +46,8 @@ export const fetchTopicsByArticle = async (topic) => {
   const { data } = await axios.get(`${BASE_URL}/articles?topic=${topic}`);
   return data.articles;
 }
+
+export const sendArticleComment = async (id, comment) => {
+  const { data } = await axios.post(`${BASE_URL}/articles/${id}/comments`, {comment});
+  return data.comment;
+};

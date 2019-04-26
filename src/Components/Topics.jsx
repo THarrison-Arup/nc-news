@@ -4,13 +4,10 @@ import TopicsWindow from "./TopicsWindow";
 
 class Topics extends Component {
   state = {
-    
   };
 
   render() {
     const { topics, articles } = this.props;
-
-    // const {} = this.state;
 
     return (
       <div className="Main-Topics">
@@ -22,9 +19,6 @@ class Topics extends Component {
       </div>
     );
   }
-
-  componentDidMount = async () => {
-  };
 }
 
 export default Topics;

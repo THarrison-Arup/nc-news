@@ -1,9 +1,11 @@
 import React from 'react';
 
-const ArticleCommentsResponse = () => {
+const ArticleCommentsResponse = (props) => {
+  const {commentResponse} = props;
+
   return (
     <div className="Article-Comments-Response">
-      Some User Response Will Appear Here!
+      {commentResponse}
     </div>
   );
 };

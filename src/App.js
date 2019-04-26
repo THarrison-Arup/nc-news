@@ -58,7 +58,7 @@ class App extends Component {
   };
 
   render() {
-    const { articles, topics, user } = this.state;
+    const { articles, topics, user, error } = this.state;
     return (
       <div className="App">
         <Header user={user} logout={this.logout}/>
@@ -76,7 +76,7 @@ class App extends Component {
               articles={articles}
               />
             <Topic path="/topics/:topic" />
-            <Error path="/error" default/>
+            <Error path="/error" default error={error}/>
           </Router>
         </Auth>
         <Footer />
@@ -100,6 +100,16 @@ class App extends Component {
        user
       })
     })
+    .catch(err => {
+      this.props.navigate('/error', {
+        replace: true,
+        state: {
+          code: err.code,
+          message: err.message,
+          from: '/articles'
+        }
+      })
+    })
   };
 
   logout = () => {
@@ -107,7 +117,6 @@ class App extends Component {
       user: {}
     })
   };
-
 }
 
 export default App;
