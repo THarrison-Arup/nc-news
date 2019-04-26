@@ -15,8 +15,6 @@ class Article extends Component {
   };
   render() {
     const { article, comments, commentAuthor, commentBody } = this.state;
-    const { location, article_id } = this.props;
-    const { pathname } = location;
 
     return (
       <div className="Main-Article">
@@ -86,8 +84,8 @@ class Article extends Component {
   };
 
   componentDidMount = async () => {
-    const articleData = this.getArticleInformation(this.props.article_id);
-    const commentData = this.getArticleComments(this.props.article_id);
+    this.getArticleInformation(this.props.article_id);
+    this.getArticleComments(this.props.article_id);
   }
 }
 

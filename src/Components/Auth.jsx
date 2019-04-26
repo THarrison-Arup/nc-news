@@ -8,8 +8,6 @@ class Auth extends Component {
   };
 
   render() {
-    const { username, login } = this.state;
-
     const {user, children} = this.props;
     return (
       !user.username 

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
-import Nav from "./Components/Nav";
+// import Nav from "./Components/Nav";
 import Logo from "./Components/Logo";
 import * as api from "./api";
 import { Router } from "@reach/router";
@@ -17,40 +17,40 @@ import "./App.css";
 class App extends Component {
   state = {
     articles: [
-      {
-        article_id: 34,
-        comment_count: "1"
-      },
-      {
-        article_id: 32,
-        comment_count: "1"
-      },
-      {
-        article_id: 15,
-        comment_count: "1"
-      },
-      {
-        article_id: 4,
-        comment_count: "1"
-      },
-      {
-        article_id: 2,
-        comment_count: "1"
-      }
+      // {
+      //   article_id: 34,
+      //   comment_count: "1"
+      // },
+      // {
+      //   article_id: 32,
+      //   comment_count: "1"
+      // },
+      // {
+      //   article_id: 15,
+      //   comment_count: "1"
+      // },
+      // {
+      //   article_id: 4,
+      //   comment_count: "1"
+      // },
+      // {
+      //   article_id: 2,
+      //   comment_count: "1"
+      // }
     ],
     topics: [
-      {
-        slug: "coding",
-        description: "Code is love, code is life"
-      },
-      {
-        slug: "football",
-        description: "FOOTIE!"
-      },
-      {
-        slug: "cooking",
-        description: "Hey good looking, what you got cooking?"
-      }
+      // {
+      //   slug: "coding",
+      //   description: "Code is love, code is life"
+      // },
+      // {
+      //   slug: "football",
+      //   description: "FOOTIE!"
+      // },
+      // {
+      //   slug: "cooking",
+      //   description: "Hey good looking, what you got cooking?"
+      // }
     ],
     user: {}
   };
@@ -60,7 +60,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header user={user} />
-        <Nav topics={topics} articles={articles} />
+        {/* <Nav topics={topics} articles={articles} /> */}
         <Logo />
         <Auth user={user} login={this.login}>
           <Router className="Main">
@@ -80,15 +80,14 @@ class App extends Component {
     );
   }
 
-  // componentDidMount = async () => {
-  //   const articleData = await api.fetchArticles();
-  //   const topicData = await api.fetchTopics();
-  //   this.setState({
-  //     topics: topicData,
-  //     articles : articleData
-  //   });
-  //   console.log(this.state,'<-- state');
-  // };
+  componentDidMount = async () => {
+    const articleData = await api.fetchArticles();
+    const topicData = await api.fetchTopics();
+    this.setState({
+      topics: topicData,
+      articles : articleData
+    });
+  };
 
   login = username => {
     api.fetchUserData(username)

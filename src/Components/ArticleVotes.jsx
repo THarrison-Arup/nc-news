@@ -5,7 +5,7 @@ const ArticleVotes = props => {
 
   return (
     <div className="Article-Votes">
-      <a className="Article-Votes-Count">{article.votes}</a>
+      <p className="Article-Votes-Count">{article.votes}</p>
       <button
         className="Article-Votes-Up"
         type="submit"

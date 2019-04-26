@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./css/Header.css";
 import { Link } from "@reach/router";
-import Auth from "./Auth";
 import User from "./User";
 
 class Header extends Component {

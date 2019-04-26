@@ -9,7 +9,7 @@ const User = (props) => {
       <p className="header-User-Username">
       {`Welcome ${user.username}`}
       </p>
-      <button className="header-User-Logout" type="submit" onclick>Logout</button>
+      <button className="header-User-Logout" type="submit" >Logout</button>
     </div>
   );
   

@@ -41,3 +41,8 @@ export const updateArticleVotes = async (id, inc) => {
   const { data } = await axios.patch(`${BASE_URL}/articles/${id}`, {inc_votes: inc});
   return data.article;
 }
+
+export const fetchTopicsByArticle = async (topic) => {
+  const { data } = await axios.get(`${BASE_URL}/articles?topic=${topic}`);
+  return data.articles;
+}
