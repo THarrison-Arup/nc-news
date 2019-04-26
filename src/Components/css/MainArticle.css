@@ -47,6 +47,28 @@
   height: 40vh;
   margin: 0em;
   padding: 0em;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 5fr;
+}
+
+.Article-Information-Comments-Title {
+  border: 1px solid rgb(183, 255, 150);
+  background: rgb(183, 255, 150, 0.5);
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+}
+.Article-Information-Comments-Sort {
+  border: 1px solid rgb(255, 222, 150);
+  background: rgb(255, 222, 150, 0.5);
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+}
+.Article-Information-Comments-List {
+  border: 1px solid rgb(255, 222, 150);
+  background: rgb(255, 222, 150, 0.5);
+  grid-row: 3 / 4;
+  grid-column: 1 / 2;
   overflow: scroll;
 }
 
