@@ -16,8 +16,8 @@ class ArticleInformationComments extends Component {
             <label>
               <input
                 type="radio"
-                value="DateCreated"
-                checked={selectedOption === 'DateCreated'}
+                value="created_at"
+                checked={selectedOption === 'created_at'}
                 onChange={this.handleChange}
               />
               Date Created
@@ -27,11 +27,11 @@ class ArticleInformationComments extends Component {
             <label>
               <input
                 type="radio"
-                value="CommentCount"
-                checked={selectedOption === 'CommentCount'}
+                value="author"
+                checked={selectedOption === 'author'}
                 onChange={this.handleChange}
                 />
-              Comment Count
+              Comment Author
             </label>
           </div>
           <div className="Article-Information-Comments-Radio">
