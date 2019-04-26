@@ -61,7 +61,7 @@ class App extends Component {
     const { articles, topics, user } = this.state;
     return (
       <div className="App">
-        <Header user={user} />
+        <Header user={user} logout={this.logout}/>
         <Nav topics={topics} articles={articles} />
         <Logo />
         <Auth user={user} login={this.login}>
@@ -99,6 +99,12 @@ class App extends Component {
       this.setState({
        user
       })
+    })
+  };
+
+  logout = () => {
+    this.setState({
+      user: {}
     })
   };
 

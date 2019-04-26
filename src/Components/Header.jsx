@@ -5,7 +5,7 @@ import User from "./User";
 
 class Header extends Component {
   render() {
-    const { user } = this.props;
+    const { user, logout } = this.props;
 
     return !user.username ? (
       <div className="Header">
@@ -48,7 +48,7 @@ class Header extends Component {
         <Link className="header-MyProfile" to="">
           My Profile
         </Link>
-        <User user={user}/>
+        <User user={user} logout={logout}/>
       </div>
     );
   }
