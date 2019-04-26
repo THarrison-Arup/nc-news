@@ -12,6 +12,7 @@ import Topics from "./Components/Topics";
 import Article from "./Components/Article";
 import Topic from "./Components/Topic";
 import Auth from "./Components/Auth";
+import Error from "./Components/Error";
 import "./App.css";
 
 class App extends Component {
@@ -52,7 +53,8 @@ class App extends Component {
       //   description: "Hey good looking, what you got cooking?"
       // }
     ],
-    user: {}
+    user: {},
+    error: null
   };
 
   render() {
@@ -74,6 +76,7 @@ class App extends Component {
               articles={articles}
               />
             <Topic path="/topics/:topic" />
+            <Error path="/error" default/>
           </Router>
         </Auth>
         <Footer />

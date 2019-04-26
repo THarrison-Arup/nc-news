@@ -52,15 +52,24 @@ class Articles extends Component {
   // Functions...
   handleArticleSearchSubmit = event => {
     event.preventDefault();
-    const { searchid, searchauthor, searchtitle, articleData } = this.state;
+    const { searchid, searchauthor, searchtitle } = this.state;
 
     api
       .fetchArticleBySearch(searchid, searchauthor, searchtitle)
       .then(articles => {
-        console.log(articles)
-        this.setState(({articleData}) => ({
+        this.setState(({ articleData }) => ({
           articleData: [...articleData, ...articles]
         }));
+      })
+      .catch(err => {
+        this.props.navigate('/error', {
+          replace: true,
+          state: {
+            code: err.code,
+            message: err.message,
+            from: '/articles'
+          }
+        })
       });
   };
 
@@ -83,7 +92,7 @@ class Articles extends Component {
   handleArticleSearchClearResults = event => {
     event.preventDefault();
     this.setState({
-      articleData: {}
+      articleData: []
     });
   };
 
