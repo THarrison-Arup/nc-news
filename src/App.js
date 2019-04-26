@@ -68,7 +68,11 @@ class App extends Component {
             <Articles path="/articles" articles={articles} />
             <Article path="/articles/:article_id" />
             <Authors path="/authors" />
-            <Topics path="/topics" topics={topics} />
+            <Topics
+              path="/topics"
+              topics={topics}
+              articles={articles}
+              />
             <Topic path="/topics/:topic" />
           </Router>
         </Auth>
