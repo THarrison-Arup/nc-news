@@ -58,12 +58,14 @@
   grid-row: 1 / 2;
   grid-column: 1 / 2;
 }
+
 .Article-Information-Comments-Sort {
   border: 1px solid rgb(183, 255, 150);
   background: rgb(183, 255, 150, 0.5);
   grid-row: 2 / 3;
   grid-column: 1 / 2;
 }
+
 .Article-Information-Comments-List {
   border: 1px solid rgb(183, 255, 150);
   background: rgb(183, 255, 150, 0.5);
@@ -72,9 +74,55 @@
   overflow: scroll;
 }
 
+.Article-Information-Comments-List li {
+  border: 1px solid rgb(150, 251, 255);
+  background: rgb(150, 251, 255, 0.5);
+  grid-row: 3 / 4;
+  grid-column: 1 / 2;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 6fr 1fr;
+  height: 16vh;
+}
+
+.Article-Information-Comments-Text {
+  border: 1px solid rgb(255, 150, 223);
+  background: rgb(255, 150, 223, 0.5);
+  grid-row: 1 / 5;
+  grid-column: 1 / 2;
+  overflow: scroll;
+}
+
 .Article-Information-Comments-Delete {
   border: 1px solid rgb(255, 183, 150);
   background: rgb(255, 183, 150, 0.5);
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+  height: 4vh;
+}
+
+.Article-Information-Comments-Up {
+  border: 1px solid rgb(255, 183, 150);
+  background: rgb(255, 183, 150, 0.5);
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+  height: 4vh;
+}
+
+.Article-Information-Comments-Down {
+  border: 1px solid rgb(255, 183, 150);
+  background: rgb(255, 183, 150, 0.5);
+  grid-row: 3 / 4;
+  grid-column: 2 / 3;
+  height: 4vh
+}
+
+.Article-Information-Comments-Votes {
+  border: 1px solid rgb(255, 183, 150);
+  background: rgb(255, 183, 150, 0.5);
+  grid-row: 4 / 5;
+  grid-column: 2 / 3;
+  height: 4vh
 }
 
 .Article-Comments {

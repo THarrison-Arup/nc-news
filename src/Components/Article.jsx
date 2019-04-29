@@ -20,7 +20,7 @@ class Article extends Component {
     return (
       <div className="Main-Article">
         <h2>{article.title}</h2>
-        <ArticleInformation article={article} comments={comments} handleDelete={this.handleDelete}/>
+        <ArticleInformation article={article} comments={comments} handleCommentDelete={this.handleCommentDelete}/>
         <ArticleComments 
           article={article}
           commentInput={this.handleCommentInput}
@@ -31,7 +31,7 @@ class Article extends Component {
         />
         <ArticleVotes
           article={article}
-          incVotes={this.incVotes}
+          incArticleVotes={this.incArticleVotes}
           />
       </div>
     );
@@ -115,7 +115,7 @@ class Article extends Component {
     })
   }
 
-  incVotes = (article, inc) => event => {
+  incArticleVotes = (article, inc) => event => {
     event.preventDefault();
     api.updateArticleVotes(article.article_id, inc)
     .then(article => {
@@ -135,15 +135,41 @@ class Article extends Component {
     });
   };
 
-  handleDelete = (commentId, articleId) => event =>{
+  incCommentVotes = (comment, inc) => event => {
+    event.preventDefault();
+    api.updateCommentVotes(comment.comment_id, inc)
+    .then(comment => {
+      this.setState({
+        comment
+      })
+    })
+    .catch(err => {
+      this.props.navigate('/error', {
+        replace: true,
+        state: {
+          code: err.code,
+          message: err.message,
+          from: '/comments'
+        }
+      })
+    });
+  };
+
+  handleCommentDelete = (commentId, articleId) => event =>{
     event.preventDefault();
     api.deleteArticleComment(commentId, articleId)
-  }
+  };
+
+  handleCommentVote = (commentId, vote) => event => 
+  {
+    event.preventDefault();
+
+  };
 
   componentDidMount = async () => {
     this.getArticleInformation(this.props.article_id);
     this.getArticleComments(this.props.article_id);
-  }
-}
+  };
+};
 
 export default Article;

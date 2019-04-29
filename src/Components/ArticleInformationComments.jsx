@@ -1,11 +1,16 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 
 class ArticleInformationComments extends Component {
   state = {
     selectedOption: "DateCreated"
   };
   render() {
-    const { comments, article, handleDelete } = this.props;
+    const {
+      comments,
+      article,
+      handleCommentDelete,
+      handleCommentVote
+    } = this.props;
 
     const { selectedOption } = this.state;
     return (
@@ -17,7 +22,7 @@ class ArticleInformationComments extends Component {
               <input
                 type="radio"
                 value="created_at"
-                checked={selectedOption === 'created_at'}
+                checked={selectedOption === "created_at"}
                 onChange={this.handleChange}
               />
               Date Created
@@ -28,9 +33,9 @@ class ArticleInformationComments extends Component {
               <input
                 type="radio"
                 value="author"
-                checked={selectedOption === 'author'}
+                checked={selectedOption === "author"}
                 onChange={this.handleChange}
-                />
+              />
               Comment Author
             </label>
           </div>
@@ -39,34 +44,55 @@ class ArticleInformationComments extends Component {
               <input
                 type="radio"
                 value="Votes"
-                checked={selectedOption === 'Votes'}
+                checked={selectedOption === "Votes"}
                 onChange={this.handleChange}
-                />
+              />
               Votes
             </label>
           </div>
         </form>
         <ul className="Article-Information-Comments-List">
           {comments.map(comment => {
-            return <li key={comment.comment_id}>
-            {comment.body}
-            <button 
-              className="Article-Information-Comments-Delete"
-              onClick={handleDelete(comment.comment_id, article.article_id)}
-            >Delete</button>
-            </li>;
+            return (
+              <li key={comment.comment_id}>
+                <a className="Article-Information-Comments-Text">{comment.body}</a>
+                <button
+                  className="Article-Information-Comments-Delete"
+                  onClick={handleCommentDelete(
+                    comment.comment_id,
+                    article.article_id
+                  )}
+                >
+                  Delete
+                </button>
+                <button
+                  className="Article-Information-Comments-Up"
+                  // onClick={handleCommentVote(comment.comment_id, vote)}
+                >
+                  UP!
+                </button>
+                <button
+                  className="Article-Information-Comments-Down"
+                  // onClick={handleCommentVote(comment.comment_id, vote)}
+                >
+                  DOWN!
+                </button>
+                <a className="Article-Information-Comments-Votes">
+                  {comment.votes}
+                </a>
+              </li>
+            );
           })}
         </ul>
       </div>
     );
   }
 
-  handleChange = (event) => {
+  handleChange = event => {
     this.setState({
       selectedOption: event.target.value
     });
   };
-
 }
 
 export default ArticleInformationComments;
