@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "@reach/router";
 import "./css/Nav.css";
 
 const Nav = ({ topics, articles }) => {
@@ -12,9 +13,9 @@ const Nav = ({ topics, articles }) => {
         ))}
       </ol>
       <ol className="Nav-Home-Topics">
-        Hot Topics
+        <h4>Hot Topics</h4>
         {topics.map(topic => (
-          <li key={topic.slug}>{topic.slug}</li>
+          <li key={topic.slug}><Link to={`/topics/${topic.slug}`}>{topic.slug}</Link></li>
         ))}
       </ol>
     </div>
