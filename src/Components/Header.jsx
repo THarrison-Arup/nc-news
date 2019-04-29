@@ -9,9 +9,6 @@ class Header extends Component {
 
     return !user.username ? (
       <div className="Header">
-        <h2 className="header-Header" to="">
-          NC News
-        </h2>
         <Link className="header-Home" to="/">
           Home
         </Link>
@@ -30,9 +27,6 @@ class Header extends Component {
       </div>
     ) : (
       <div className="Header">
-        <h2 className="header-Header" to="">
-          NC News
-        </h2>
         <Link className="header-Home" to="/">
           Home
         </Link>

@@ -1,6 +1,5 @@
 .Nav {
-  border: 1px solid rgb(154, 236, 60, 1.0);
-  background: rgb(154, 236, 60, 0.5);
+  background: rgb(190, 220, 235, 0.5);
   color: black;
   grid-column: 1 / 2;
   grid-row: 2 / 3;
@@ -14,17 +13,27 @@
 }
 
 .Nav-Home-Articles {
-  border: 1px solid rgb(130, 184, 69);
-  padding: 0;
+  border-bottom: 25px solid rgb(190, 220, 235);
+  padding: 0.3em;
   margin: 0;
   overflow-y: scroll;
-  height: 43vh;
+  height: 70vh;
 }
 
 .Nav-Home-Topics {
-  border: 1px solid rgb(130, 184, 69);
-  padding: 0%;
+  border-bottom: 25px solid rgb(190, 220, 235);
+  padding: 0.3em;
   margin: 0;
   overflow-y: scroll;
-  height: 42vh;
+  height: 15vh;
+}
+
+@keyframes list {
+  from {background-color: red;}
+  to {background-color: yellow;}
+}
+
+li:hover {
+  animation-name: list;
+  animation-duration: 4s;
 }

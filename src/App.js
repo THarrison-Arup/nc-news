@@ -19,42 +19,8 @@ import "./App.css";
 
 class App extends Component {
   state = {
-    articles: [
-      // {
-      //   article_id: 34,
-      //   comment_count: "1"
-      // },
-      // {
-      //   article_id: 32,
-      //   comment_count: "1"
-      // },
-      // {
-      //   article_id: 15,
-      //   comment_count: "1"
-      // },
-      // {
-      //   article_id: 4,
-      //   comment_count: "1"
-      // },
-      // {
-      //   article_id: 2,
-      //   comment_count: "1"
-      // }
-    ],
-    topics: [
-      // {
-      //   slug: "coding",
-      //   description: "Code is love, code is life"
-      // },
-      // {
-      //   slug: "football",
-      //   description: "FOOTIE!"
-      // },
-      // {
-      //   slug: "cooking",
-      //   description: "Hey good looking, what you got cooking?"
-      // }
-    ],
+    articles: [],
+    topics: [],
     user: {},
     error: null
   };

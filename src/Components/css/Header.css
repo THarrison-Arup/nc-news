@@ -1,6 +1,6 @@
 .Header {
-  border: 1px solid rgb(255,150, 150, 1.0);
-  background: rgb(255, 150, 150, 0.5);
+  border: 5px solid rgb(190, 220, 235);
+  background: rgba(190, 220, 235, 0.5);
   color: black;
   grid-column: 2 / 3;
   grid-row: 1 / 2;
@@ -14,7 +14,7 @@
 }
 
 .header-Header {
-  color: blue;
+  color: rgba(245, 245, 245, 0.438);
   grid-column: 1 / 6;
   grid-row: 1 / 2;
   vertical-align: middle;
@@ -24,33 +24,73 @@
 }
 
 .header-Home {
-  color: red;
+  color: rgb(110, 110, 110);
   grid-column: 1 / 2;
   grid-row: 2 / 3;
+  font-size: 2em;
+  text-decoration: none;
+}
+
+.header-Home:hover {
+  background-color: rgba(126, 219, 255, 0.5);
+  border-radius: 0.5em;
+  transition: ease-in 0.3s;
 }
 
 .header-Authors {
-  color: green; 
+  color: rgb(110, 110, 110); 
   grid-column: 2 / 3;
   grid-row: 2 / 3;
+  font-size: 2em;
+  text-decoration: none;
+}
+
+.header-Authors:hover {
+  background-color: rgba(246, 253, 141, 0.5);
+  border-radius: 0.5em;
+  transition: ease-in 0.3s;
 }
 
 .header-Articles {
-  color: orange;
+  color: rgb(110, 110, 110);
   grid-column: 3 / 4;
   grid-row: 2 / 3;
+  font-size: 2em;
+  text-decoration: none;
+}
+
+.header-Articles:hover {
+  background-color: rgba(216, 248, 129, 0.5);
+  border-radius: 0.5em;
+  transition: ease-in 0.3s;
 }
 
 .header-Topics {
-  color: purple;
+  color: rgb(110, 110, 110);
   grid-column: 4 / 5;
   grid-row: 2 / 3;
+  font-size: 2em;
+  text-decoration: none;
+}
+
+.header-Topics:hover {
+  background-color: rgba(213, 176, 255, 0.5);
+  border-radius: 0.5em;
+  transition: ease-in 0.3s;
 }
 
 .header-MyProfile {
-  color: magenta;
+  color: rgb(110, 110, 110);
   grid-column: 5 / 6;
   grid-row: 2 / 3;
+  font-size: 2em;
+  text-decoration: none;
+}
+
+.header-MyProfile:hover {
+  background-color: rgba(255, 176, 176, 0.5);
+  border-radius: 0.5em;
+  transition: ease-in 0.3s;
 }
 
 .header-User {
