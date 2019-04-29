@@ -20,7 +20,7 @@ class Article extends Component {
     return (
       <div className="Main-Article">
         <h2>{article.title}</h2>
-        <ArticleInformation article={article} comments={comments}/>
+        <ArticleInformation article={article} comments={comments} handleDelete={this.handleDelete}/>
         <ArticleComments 
           article={article}
           commentInput={this.handleCommentInput}
@@ -134,6 +134,11 @@ class Article extends Component {
       })
     });
   };
+
+  handleDelete = (commentId, articleId) => event =>{
+    event.preventDefault();
+    api.deleteArticleComment(commentId, articleId)
+  }
 
   componentDidMount = async () => {
     this.getArticleInformation(this.props.article_id);

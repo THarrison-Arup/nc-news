@@ -7,7 +7,7 @@ class ArticlesSearchResponse extends Component {
   };
 
   render() {
-    const {articleData} = this.props;
+    const { articleData, handleSortInput } = this.props;
 
     const { selectedOption } = this.state;
 
@@ -20,7 +20,7 @@ class ArticlesSearchResponse extends Component {
               <input
                 type="radio"
                 value="created_at"
-                checked={selectedOption === "created_at"}
+                checked={selectedOption === "created_at" && handleSortInput("created_at")}
                 onChange={this.handleChange}
               />
                 Date Created

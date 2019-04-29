@@ -12,6 +12,7 @@ class Articles extends Component {
     searchid: "",
     searchtitle: "",
     searchauthor: "",
+    sort_by: "",
     addtitle: "",
     addauthor: "",
     addtopic: "",
@@ -23,6 +24,7 @@ class Articles extends Component {
       searchid,
       searchauthor,
       searchtitle,
+      sort_by,
       addauthor,
       addtitle,
       addtopic
@@ -36,6 +38,7 @@ class Articles extends Component {
           handleArticleSearchClearInputs={this.handleArticleSearchClearInputs}
           handleArticleSearchClearResults={this.handleArticleSearchClearResults}
           searchCriteria={{ searchid, searchauthor, searchtitle }}
+          handleSortInput={this.handleSortInput}
         />
         <ArticlesSearchResponse articleData={this.state.articleData} />
         <ArticlesAdderForm
@@ -52,10 +55,10 @@ class Articles extends Component {
   // Functions...
   handleArticleSearchSubmit = event => {
     event.preventDefault();
-    const { searchid, searchauthor, searchtitle } = this.state;
+    const { searchid, searchauthor, searchtitle, sort_by } = this.state;
 
     api
-      .fetchArticleBySearch(searchid, searchauthor, searchtitle)
+      .fetchArticleBySearch(searchid, searchauthor, searchtitle, sort_by)
       .then(articles => {
         this.setState(({ articleData }) => ({
           articleData: [...articleData, ...articles]
@@ -72,6 +75,14 @@ class Articles extends Component {
         })
       });
   };
+
+  handleSortInput = criteria => event => {
+    console.log(criteria)
+    const { name, value } = event.target;
+    this.setState({
+      sort_by: value
+    })
+  }
 
   handleArticleSearchInput = event => {
     const { name, value } = event.target;

@@ -4,12 +4,12 @@ import ArticleInformationComments from './ArticleInformationComments';
 
 const ArticleInformation = (props) => {
   
-  const { article, comments } = props
+  const { article, comments, handleDelete } = props
 
   return (
     <div className="Article-Information">
       <ArticleInformationText article={article}/>
-      <ArticleInformationComments comments={comments}/>
+      <ArticleInformationComments article={article} comments={comments} handleDelete={handleDelete}/>
     </div>
   );
 };

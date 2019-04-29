@@ -5,7 +5,7 @@ class ArticleInformationComments extends Component {
     selectedOption: "DateCreated"
   };
   render() {
-    const { comments } = this.props;
+    const { comments, article, handleDelete } = this.props;
 
     const { selectedOption } = this.state;
     return (
@@ -48,7 +48,13 @@ class ArticleInformationComments extends Component {
         </form>
         <ul className="Article-Information-Comments-List">
           {comments.map(comment => {
-            return <li key={comment.comment_id}>{comment.body}</li>;
+            return <li key={comment.comment_id}>
+            {comment.body}
+            <button 
+              className="Article-Information-Comments-Delete"
+              onClick={handleDelete(comment.comment_id, article.article_id)}
+            >Delete</button>
+            </li>;
           })}
         </ul>
       </div>
