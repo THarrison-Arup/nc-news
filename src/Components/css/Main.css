@@ -1,13 +1,14 @@
 .Main {
+  background-color: rgb(183, 235, 255, 0.5);
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   height: 85vh;
+  margin: 0em;
+  padding: 0em;
 }
 
 .Main-Articles {
-  border: 1px solid rgb(241, 207, 51, 1.0);
-  background: rgb(241, 207, 51, 0.5);
   color: black;
   grid-column: 1 / 3;
   grid-row: 1 / 3;
@@ -20,23 +21,21 @@
 }
 
 .Articles-Search-Form {
-  border: 1px solid rgb(236, 50, 253);
-  background: rgb(236, 50, 253, 0.5);
+  border: 2px solid rgb(183, 235, 255);
   grid-column: 1/2;
   grid-row: 1/2;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 0.5fr 0.5fr 0.5fr;
   height: 42vh;
-  margin: 0;
-  padding: 0;
+  margin: 0em;
+  padding: 0.5em;
 }
 
 .Articles-Search-Repsonse {
-  border: 1px solid rgb(50, 223, 253);
-  background: rgb(50, 223, 253, 0.5);
+    border: 2px solid rgb(183, 235, 255);
   margin: 0;
-  padding: 0;
+  padding: 0.5em;
   grid-column: 2/3;
   grid-row: 1/2;
   height: 42vh;
@@ -56,9 +55,7 @@
 }
 
 .Articles-Search-Results {
-  border: 1px solid rgb(50, 131, 253);
-  background: rgb(50, 131, 253, 0.5);
-  padding: 0em;
+  padding: 0.5em;
   margin: 0em;
   height: 33vh;
   grid-row: 2 / 3;
@@ -96,8 +93,7 @@
 }
 
 .Articles-Add-Form {
-  border: 1px solid rgb(50, 97, 253);
-  background: rgb(50, 97, 253, 0.5);
+  border: 2px solid rgb(183, 235, 255);
   grid-column: 1/2;
   grid-row: 2/3;
   display: grid;
@@ -105,7 +101,7 @@
   grid-template-columns: 1fr;
   height: 42vh;
   margin: 0;
-  padding: 0;
+  padding: 0.5em;
 }
 
 #Articles-Add-Title {
@@ -139,18 +135,15 @@
 }
 
 .Articles-Add-Response {
-  border: 1px solid rgb(253, 50, 84);
-  background: rgb(253, 50, 84, 0.5);
+  border: 2px solid rgb(183, 235, 255);
   margin: 0;
-  padding: 0;
+  padding: 0.5em;
   grid-row: 2 / 7;
   grid-column: 2 / 3;
   height: 42vh;
 }
 
 .Articles-Add-Results {
-  border: 1px solid rgb(253, 50, 50);
-  background: rgb(253, 50, 50, 0.5);
   padding: 0em;
   margin: 0em;
   height: 35vh;
