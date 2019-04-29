@@ -33,7 +33,7 @@
 }
 
 .Articles-Search-Repsonse {
-    border: 2px solid rgb(183, 235, 255);
+  border: 2px solid rgb(183, 235, 255);
   margin: 0;
   padding: 0.5em;
   grid-column: 2/3;
@@ -55,11 +55,13 @@
 }
 
 .Articles-Search-Results {
-  padding: 0.5em;
+  padding: 0em;
   margin: 0em;
-  height: 33vh;
+  height: 31vh;
   grid-row: 2 / 3;
   grid-column: 1 / 4;
+  overflow: scroll;
+  text-align: left;
 }
 
 #Articles-Search-ID {
@@ -146,5 +148,5 @@
 .Articles-Add-Results {
   padding: 0em;
   margin: 0em;
-  height: 35vh;
+  height: 33vh;
 }

@@ -50,11 +50,11 @@ class ArticlesSearchResponse extends Component {
           </div>
         </form>
         <ul className="Articles-Search-Results">
-          {articleData.map(article => {
+          {articleData.map((article, ind) => {
             return (
-              <li key={article.article_id}>
+              <li key={ind}>
                 {article ? (
-                  <Link to={`${article.article_id}`}>{article.title}</Link>
+                  <Link to={`${article.article_id}`}>{`${ind+1}. ${article.title}`}</Link>
                 ) : (
                   ""
                 )}

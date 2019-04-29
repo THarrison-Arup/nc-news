@@ -34,7 +34,7 @@
   to {background-color: yellow;}
 }
 
-li:hover {
+.Nav li:hover {
   animation-name: list;
   animation-duration: 4s;
 }
