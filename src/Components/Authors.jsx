@@ -5,7 +5,7 @@ import "./css/Main.css";
 const Authors = () => {
   return (
     <div>
-      Some Authors
+      <h2>Coming Soon!</h2>
     </div>
   );
 };

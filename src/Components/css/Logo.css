@@ -31,7 +31,7 @@
   100% {background-color: rgb(187, 0, 0); left:0px; top:0px;}
 }
 
-h3:hover {
+.Logo h3:hover {
   animation-name: logo;
   animation-duration: 1s;
   animation-delay: 0s;
