@@ -1,0 +1,32 @@
+.Profile {
+  border: 1px solid rgb(253, 217, 15);
+  background: rgb(253, 217, 15, 0.5);
+  height: 85vh;
+  margin: 0em;
+  padding: 0em;
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+  display: grid;
+  grid-template-rows: 1fr 4fr 4fr;
+  grid-template-columns: 1fr;
+}
+
+.Profile-User {
+  border: 1px solid rgb(122, 253, 15);
+  background: rgba(122, 253, 15, 0.5);
+  height: 85vh;
+  margin: 0em;
+  padding: 0em;
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+}
+
+.Profile-Article-List {
+  border: 1px solid rgb(15, 253, 221);
+  background: rgba(15, 253, 221, 0.5);
+  height: 85vh;
+  margin: 0em;
+  padding: 0em;
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+}

@@ -48,7 +48,7 @@ class ArticleInformationComments extends Component {
         </form>
         <ul className="Article-Information-Comments-List">
           {comments.map(comment => {
-            return <li>{comment.body}</li>;
+            return <li key={comment.comment_id}>{comment.body}</li>;
           })}
         </ul>
       </div>

@@ -24,7 +24,7 @@ class Header extends Component {
         <Link className="header-Topics" to="/topics">
           Topics
         </Link>
-        <Link className="header-MyProfile" to="">
+        <Link className="header-MyProfile" to="/MyProfile">
           My Profile
         </Link>
       </div>
@@ -45,7 +45,7 @@ class Header extends Component {
         <Link className="header-Topics" to="/topics">
           Topics
         </Link>
-        <Link className="header-MyProfile" to="">
+        <Link className="header-MyProfile" to="/MyProfile" user={user}>
           My Profile
         </Link>
         <User user={user} logout={logout}/>

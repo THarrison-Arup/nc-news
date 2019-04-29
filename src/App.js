@@ -13,6 +13,8 @@ import Article from "./Components/Article";
 import Topic from "./Components/Topic";
 import Auth from "./Components/Auth";
 import Error from "./Components/Error";
+import Contacts from "./Components/Contacts";
+import Profile from "./Components/Profile";
 import "./App.css";
 
 class App extends Component {
@@ -77,9 +79,11 @@ class App extends Component {
               />
             <Topic path="/topics/:topic" />
             <Error path="/error" default error={error}/>
+            <Contacts path="/Contacts"/>
+            <Profile path="/MyProfile" user={user}/>
           </Router>
         </Auth>
-        <Footer />
+        <Footer/>
       </div>
     );
   }
