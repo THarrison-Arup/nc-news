@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import "./css/Profile.css";
 import * as api from '../api';
+import {Link} from '@reach/router';
 
 class Profile extends Component {
   state = {
@@ -16,15 +17,19 @@ class Profile extends Component {
 
     return (
       <div className="Profile">
-        <p className="Profile-User">Hello {name}</p>
-        <ul className="Profile-Article-List">
+        <p className="Profile-User">Hello {name}
+        <h2>Coming Soon!</h2>
+
+        Click <Link to="/">HERE</Link> to return to Home.
+        </p>
+        {/* <ul className="Profile-Article-List">
           {articles.map(article => {
             return (
               <li key={article.article_id}>
               {article.title}</li>
               )
           })}
-        </ul>
+        </ul> */}
       </div>
     );
   }
