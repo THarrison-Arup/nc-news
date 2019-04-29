@@ -13,8 +13,8 @@ class ArticlesSearchResponse extends Component {
 
     return (
       <main className="Articles-Search-Repsonse">
-        <h3>Search Results</h3>
-        <form className="Article-Search-Results-Sort">
+        <h3 className="Articles-Search-Response-Title">Search Results</h3>
+        <form className="Articles-Search-Results-Sort">
           <div className="Article-Information-Results-Radio">
             <label>
               <input

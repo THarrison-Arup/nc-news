@@ -54,9 +54,6 @@ class ArticleInformationComments extends Component {
       </div>
     );
   }
-  selectedOption = () => {
-
-  };
 
   handleChange = (event) => {
     this.setState({
