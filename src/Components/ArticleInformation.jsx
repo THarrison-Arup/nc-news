@@ -4,7 +4,7 @@ import ArticleInformationComments from './ArticleInformationComments';
 
 const ArticleInformation = (props) => {
   
-  const { article, comments, handleCommentDelete, handleCommentVote } = props
+  const { article, comments, handleCommentDelete, incCommentVotes } = props
 
   return (
     <div className="Article-Information">
@@ -13,7 +13,7 @@ const ArticleInformation = (props) => {
         article={article}
         comments={comments}
         handleCommentDelete={handleCommentDelete}
-        handleCommentVote={handleCommentVote}
+        incCommentVotes={incCommentVotes}
         />
     </div>
   );

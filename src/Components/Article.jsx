@@ -8,6 +8,7 @@ import ArticleVotes from './ArticleVotes';
 class Article extends Component {
   state = {
     article: {},
+    comment: {},
     comments: [],
     commentAuthor: '',
     commentBody: '',
@@ -20,14 +21,16 @@ class Article extends Component {
     return (
       <div className="Main-Article">
         <h2>{article.title}</h2>
-        <ArticleInformation article={article} comments={comments} handleCommentDelete={this.handleCommentDelete}/>
+        <ArticleInformation article={article} comments={comments} handleCommentDelete={this.handleCommentDelete}
+        incCommentVotes={this.incCommentVotes}
+        />
         <ArticleComments 
           article={article}
           commentInput={this.handleCommentInput}
           submitComment={this.handleArticleCommentSubmit}
           clearCommentInput={this.handleArticleCommentClear}
           commentValues={{commentAuthor, commentBody}}
-          commentRespons={commentResponse}
+          commentResponse={commentResponse}
         />
         <ArticleVotes
           article={article}
@@ -135,9 +138,9 @@ class Article extends Component {
     });
   };
 
-  incCommentVotes = (comment, inc) => event => {
+  incCommentVotes = (commentId, inc) => event => {
     event.preventDefault();
-    api.updateCommentVotes(comment.comment_id, inc)
+    api.updateCommentVotes(commentId, inc)
     .then(comment => {
       this.setState({
         comment

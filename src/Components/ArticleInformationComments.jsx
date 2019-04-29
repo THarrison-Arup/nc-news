@@ -9,7 +9,7 @@ class ArticleInformationComments extends Component {
       comments,
       article,
       handleCommentDelete,
-      handleCommentVote
+      incCommentVotes
     } = this.props;
 
     const { selectedOption } = this.state;
@@ -67,19 +67,19 @@ class ArticleInformationComments extends Component {
                 </button>
                 <button
                   className="Article-Information-Comments-Up"
-                  // onClick={handleCommentVote(comment.comment_id, vote)}
+                  onClick={incCommentVotes(comment.comment_id, +1)}
                 >
                   UP!
                 </button>
                 <button
                   className="Article-Information-Comments-Down"
-                  // onClick={handleCommentVote(comment.comment_id, vote)}
+                  onClick={incCommentVotes(comment.comment_id, -1)}
                 >
                   DOWN!
                 </button>
-                <a className="Article-Information-Comments-Votes">
-                  {comment.votes}
-                </a>
+                <p className="Article-Information-Comments-Votes">
+                  {`VOTES: ${comment.votes}`}
+                </p>
               </li>
             );
           })}

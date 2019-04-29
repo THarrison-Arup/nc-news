@@ -76,9 +76,13 @@ export const deleteArticleComment = async (commentId, articleId) => {
     });
 };
 
-export const updateCommentVotes = async (id, inc) => {
-  const { data } = await axios.patch(`${BASE_URL}/comments/${id}`, {
-    inc_votes: inc
-  });
-  return data.comments;
+export const updateCommentVotes = async (commentId, voteInc, articleId) => {
+  console.log(commentId, voteInc, articleId);
+  const { data } = await axios.patch(`${BASE_URL}/comments/${commentId}`, {
+    inc_votes: voteInc
+  })
+  .then(comments => {
+    fetchCommentsById(articleId)
+    return comments
+    });
 };
