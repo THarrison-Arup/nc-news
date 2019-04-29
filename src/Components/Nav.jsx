@@ -9,7 +9,7 @@ const Nav = ({ topics, articles }) => {
       <ol className="Nav-Home-Articles">
         <h4>Top Articles</h4>
         {articles.map(article => (
-          <li key={article.article_id}>{article.title} by {article.author}<br/><br/></li>
+          <li key={article.article_id}><Link to={`/articles/${article.article_id}`}>{article.title}</Link> by {article.author}<br/><br/></li>
         ))}
       </ol>
       <ol className="Nav-Home-Topics">
