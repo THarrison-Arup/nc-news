@@ -6,9 +6,9 @@ const Home = () => {
     <div className="container">
       <img src={'http://jewel1067.com/wp-content/uploads/news.jpg'}/>
       <div className="overlay">
-        <div className="text">
-          Hello
-        </div>
+        <h4 className="text">
+          Welcome to North News!
+        </h4>
       </div>
     </div>
   );

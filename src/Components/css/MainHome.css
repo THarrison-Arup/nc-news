@@ -24,6 +24,7 @@ img {
   .container:hover .overlay {
     bottom: 0;
     height: 100%;
+    background-image: linear-gradient(to right, rgb(150, 150, 150, 0), rgb(238, 238, 238, 1))
   }
 
   .text {
