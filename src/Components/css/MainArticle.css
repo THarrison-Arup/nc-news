@@ -72,6 +72,8 @@
   grid-row: 3 / 4;
   grid-column: 1 / 2;
   overflow: scroll;
+  margin: 0em;
+  padding: 0em;
 }
 
 .Article-Information-Comments-List li {
