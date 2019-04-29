@@ -138,7 +138,7 @@ class Article extends Component {
     });
   };
 
-  incCommentVotes = (commentId, inc) => event => {
+  incCommentVotes = (commentId, inc, articleId) => event => {
     event.preventDefault();
     api.updateCommentVotes(commentId, inc)
     .then(comment => {

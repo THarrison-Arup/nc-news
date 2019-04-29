@@ -8,6 +8,7 @@
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   height: 10vh;
+  width: 80vw;
   margin: 0;
   padding: 0;
 }

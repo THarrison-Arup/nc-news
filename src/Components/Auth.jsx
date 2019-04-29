@@ -3,11 +3,12 @@ import "./css/Auth.css";
 
 class Auth extends Component {
   state = {
-    username: "",
+    username: "grumpy19",
     login: ""
   };
 
   render() {
+    const {username, login} = this.state;
     const {user, children} = this.props;
     return (
       !user.username 
@@ -16,7 +17,7 @@ class Auth extends Component {
         <input
           id="username"
           type="text"
-          value={this.username}
+          value={username}
           placeholder="Username"
           onChange={this.handleChange}
         />
