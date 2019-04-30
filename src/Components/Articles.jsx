@@ -94,7 +94,7 @@ class Articles extends Component {
   handleArticleSearchClearInputs = event => {
     event.preventDefault();
     this.setState({
-      searchid: "",
+      searchtopic: "",
       searchauthor: "",
       searchtitle: ""
     });
