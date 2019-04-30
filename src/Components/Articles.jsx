@@ -9,7 +9,7 @@ import ArticlesAdderRepsonse from "./ArticlesAdderResponse";
 class Articles extends Component {
   state = {
     searchCriteria: {},
-    searchid: "",
+    searchtopic: "",
     searchtitle: "",
     searchauthor: "",
     sort_by: "",
@@ -21,7 +21,7 @@ class Articles extends Component {
 
   render() {
     const {
-      searchid,
+      searchtopic,
       searchauthor,
       searchtitle,
       sort_by,
@@ -37,7 +37,7 @@ class Articles extends Component {
           handleArticleSearchInput={this.handleArticleSearchInput}
           handleArticleSearchClearInputs={this.handleArticleSearchClearInputs}
           handleArticleSearchClearResults={this.handleArticleSearchClearResults}
-          searchCriteria={{ searchid, searchauthor, searchtitle }}
+          searchCriteria={{ searchtopic, searchauthor, searchtitle }}
           handleSortInput={this.handleSortInput}
         />
         <ArticlesSearchResponse articleData={this.state.articleData} />
@@ -55,10 +55,10 @@ class Articles extends Component {
   // Functions...
   handleArticleSearchSubmit = event => {
     event.preventDefault();
-    const { searchid, searchauthor, searchtitle, sort_by } = this.state;
+    const { searchtopic, searchauthor, searchtitle, sort_by } = this.state;
 
     api
-      .fetchArticleBySearch(searchid, searchauthor, searchtitle, sort_by)
+      .fetchArticleBySearch(searchauthor, searchtitle, searchtopic, sort_by)
       .then(articles => {
         this.setState(({ articleData }) => ({
           articleData: [...articleData, ...articles]

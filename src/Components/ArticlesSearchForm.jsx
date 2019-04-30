@@ -7,19 +7,11 @@ const ArticlesSearchForm = ({
   handleArticleSearchClearResults,
   searchCriteria
 }) => {
-  const { searchauthor, searchid, searchtitle } = searchCriteria;
+  const { searchauthor, searchtopic, searchtitle } = searchCriteria;
 
   return (
     <form className="Articles-Search-Form">
       <h3>Use the search criteria below...</h3>
-      <input
-        id="Articles-Search-ID"
-        name="searchid"
-        type="text"
-        value={searchid}
-        placeholder="Article ID..."
-        onChange={event => handleArticleSearchInput(event)}
-      />
       <input
         id="Articles-Search-Title"
         name="searchtitle"
@@ -34,6 +26,14 @@ const ArticlesSearchForm = ({
         type="text"
         value={searchauthor}
         placeholder="Article Author..."
+        onChange={event => handleArticleSearchInput(event)}
+      />
+      <input
+        id="Articles-Search-Topic"
+        name="searchtopic"
+        type="text"
+        value={searchtopic}
+        placeholder="Article Topic..."
         onChange={event => handleArticleSearchInput(event)}
       />
       <button

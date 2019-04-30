@@ -12,14 +12,14 @@ export const fetchTopics = async () => {
   return data.topics;
 };
 
-export const fetchArticleBySearch = async (id, author, title, sort_by) => {
-  if (author || title) {
-    const { data } = await axios.get(`${BASE_URL}/articles/${id}`, {
-      params: { author: author, title: title, sort_by: sort_by }
+export const fetchArticleBySearch = async (author, title, topic, sort_by) => {
+  if (author || title || topic || sort_by) {
+    const { data } = await axios.get(`${BASE_URL}/articles/`, {
+      params: { author: author, title: title, topic: topic, sort_by: sort_by }
     });
     return data.articles;
   } else {
-    const { data } = await axios.get(`${BASE_URL}/articles/${id}`);
+    const { data } = await axios.get(`${BASE_URL}/articles/`);
     return [data.article];
   }
 };
