@@ -5,6 +5,7 @@ const ArticleCommentsResponse = (props) => {
 
   return (
     <div className="Article-Comments-Response">
+      A user response will appear here...
       {commentResponse}
     </div>
   );

@@ -6,8 +6,6 @@
 }
 
 .Main-Article h2 {
-  border: 1px solid rgb(50, 100, 50);
-  background: rgb(50, 100, 50, 0.5);
   max-height: 100%;
   margin: 0;
   padding: 0;
@@ -18,8 +16,6 @@
 }
 
 .Article-Information {
-  border: 1px solid rgb(255, 150, 150, 1.0);
-  background: rgb(255, 150, 150, 0.5);
   grid-row: 2 / 3;
   grid-column: 1 / 2;
   display: grid;
@@ -29,46 +25,38 @@
 }
 
 .Article-Information-Text {
-  border: 1px solid rgb(150, 251, 255);
-  background: rgb(150, 251, 255, 0.5);
+  border: 2px solid rgb(183, 235, 255);
   grid-row: 1 / 2;
   grid-column: 1 / 2;
   margin: 0em;
-  padding: 0em;
+  padding: 0.5em;
   overflow: scroll;
   height: 35vh;
 }
 
 .Article-Information-Comments {
-  border: 1px solid rgb(255, 222, 150);
-  background: rgb(255, 222, 150, 0.5);
+  border: 2px solid rgb(183, 235, 255);
   grid-row: 2 / 3;
   grid-column: 1 / 2;
   height: 40vh;
   margin: 0em;
-  padding: 0em;
+  padding: 0.5em;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 5fr;
 }
 
 .Article-Information-Comments-Title {
-  border: 1px solid rgb(183, 255, 150);
-  background: rgb(183, 255, 150, 0.5);
   grid-row: 1 / 2;
   grid-column: 1 / 2;
 }
 
 .Article-Information-Comments-Sort {
-  border: 1px solid rgb(183, 255, 150);
-  background: rgb(183, 255, 150, 0.5);
   grid-row: 2 / 3;
   grid-column: 1 / 2;
 }
 
 .Article-Information-Comments-List {
-  border: 1px solid rgb(183, 255, 150);
-  background: rgb(183, 255, 150, 0.5);
   grid-row: 3 / 4;
   grid-column: 1 / 2;
   overflow: scroll;
@@ -77,8 +65,6 @@
 }
 
 .Article-Information-Comments-List li {
-  border: 1px solid rgb(150, 251, 255);
-  background: rgb(150, 251, 255, 0.5);
   grid-row: 3 / 4;
   grid-column: 1 / 2;
   display: grid;
@@ -88,19 +74,24 @@
 }
 
 .Article-Information-Comments-Text {
-  border: 1px solid rgb(255, 150, 223);
-  background: rgb(255, 150, 223, 0.5);
   grid-row: 1 / 5;
   grid-column: 1 / 2;
   max-height: 16vh;
   overflow: scroll;
   margin: 0em;
-  padding: 0em;
+  padding: 0.5em;
+}
+
+a.Article-Information-Comments-Text{
+  padding: 0.5em;
+  margin-right: 0.5em;
+  margin-bottom: 0.5em;
+  border: 1px dashed grey;
+  background: rgb(204, 224, 231);
+  box-shadow: 5px 5px 5px grey;
 }
 
 .Article-Information-Comments-Delete {
-  border: 1px solid rgb(255, 183, 150);
-  background: rgb(255, 183, 150, 0.5);
   grid-row: 1 / 2;
   grid-column: 2 / 3;
   height: 4vh;
@@ -109,8 +100,6 @@
 }
 
 .Article-Information-Comments-Up {
-  border: 1px solid rgb(255, 183, 150);
-  background: rgb(255, 183, 150, 0.5);
   grid-row: 2 / 3;
   grid-column: 2 / 3;
   height: 4vh;
@@ -119,8 +108,6 @@
 }
 
 .Article-Information-Comments-Down {
-  border: 1px solid rgb(255, 183, 150);
-  background: rgb(255, 183, 150, 0.5);
   grid-row: 3 / 4;
   grid-column: 2 / 3;
   height: 4vh;
@@ -129,8 +116,6 @@
 }
 
 .Article-Information-Comments-Votes {
-  border: 1px solid rgb(255, 183, 150);
-  background: rgb(255, 183, 150, 0.5);
   grid-row: 4 / 5;
   grid-column: 2 / 3;
   height: 4vh;
@@ -139,8 +124,6 @@
 }
 
 .Article-Comments {
-  border: 1px solid rgb(192, 255, 150);
-  background: rgb(192, 255, 150, 0.5);
   height: 100%;
   grid-row: 2 / 3;
   grid-column: 2 / 3;
@@ -151,8 +134,6 @@
 }
 
 .Article-Comments-Form {
-  border: 1px solid rgb(255, 150, 241);
-  background: rgb(255, 150, 241, 0.5);
   grid-row: 1 / 2;
   grid-column: 1 / 2;
   height: 35vh;
@@ -186,8 +167,6 @@
 }
 
 .Article-Comments-Response {
-  border: 1px solid rgb(150, 166, 255);
-  background: rgb(150, 166, 255, 0.5);
   grid-row: 2 / 3;
   grid-column: 1 / 2;
   height: 40vh;
@@ -196,8 +175,6 @@
 }
 
 .Article-Votes {
-  border: 1px solid rgb(250, 130, 35);
-  background: rgb(250, 130, 35, 0.5);
   grid-row: 1 / 2;
   grid-column: 2 / 3;
   height: 10vh;
