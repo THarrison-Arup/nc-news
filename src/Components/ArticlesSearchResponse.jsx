@@ -52,15 +52,21 @@ class ArticlesSearchResponse extends Component {
         <ul className="Articles-Search-Results">
           {articleData.map((article, ind) => {
             return (
+              article ?
               <li key={ind}>
-                {article ? (
-                  <Link to={`${article.article_id}`}>{`${ind+1}. ${article.title}`}</Link>
-                ) : (
-                  ""
-                )}
+                {`${ind+1}. `}
+                <Link to={`${article.article_id}`}>
+                  {`${article.title}`}
+                </Link>
+                <br/> by {`${article.author}`}
+                <br/> Votes: {`${article.votes}`} Comments: {`${article.comment_count}`} Created: {`${article.created_at}`.slice(0,10)}<br/><br/>
               </li>
-            );
-          })}
+                 : 
+                <li>
+                  ""
+              </li>
+                )}
+            )}
         </ul>
       </main>
     );
