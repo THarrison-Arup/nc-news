@@ -57,32 +57,33 @@ class Articles extends Component {
     event.preventDefault();
     const { searchtopic, searchauthor, searchtitle, sort_by } = this.state;
 
-    api
-      .fetchArticleBySearch(searchauthor, searchtitle, searchtopic, sort_by)
-      .then(articles => {
-        this.setState(({ articleData }) => ({
-          articleData: [...articleData, ...articles]
-        }));
-      })
-      .catch(err => {
-        this.props.navigate('/error', {
-          replace: true,
-          state: {
-            code: err.code,
-            message: err.message,
-            from: '/articles'
-          }
+    if ((searchtopic, searchauthor, searchtitle)) {
+      api
+        .fetchArticleBySearch(searchauthor, searchtitle, searchtopic, sort_by)
+        .then(articles => {
+          this.setState(({ articleData }) => ({
+            articleData: [...articleData, ...articles]
+          }));
         })
-      });
+        .catch(err => {
+          this.props.navigate("/error", {
+            replace: true,
+            state: {
+              code: err.code,
+              message: err.message,
+              from: "/articles"
+            }
+          });
+        });
+    }
   };
 
   handleSortInput = criteria => event => {
-    console.log(criteria)
-    const { name, value } = event.target;
+    const { value } = event.target;
     this.setState({
       sort_by: value
-    })
-  }
+    });
+  };
 
   handleArticleSearchInput = event => {
     const { name, value } = event.target;
