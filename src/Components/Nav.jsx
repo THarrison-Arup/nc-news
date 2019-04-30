@@ -4,11 +4,21 @@ import "./css/Nav.css";
 
 const Nav = ({ topics, articles }) => {
 
+  function voteSort(a, b) {
+    if(a.votes < b.votes){
+      return 1;
+    }
+    if (a.votes > b.votes){
+      return -1;
+    }
+    return 0;
+  }
+
   return (
     <div className="Nav">
       <ol className="Nav-Home-Articles">
-        <h4>Top Articles</h4>
-        {articles.map((article, ind) => (
+        <h4>Top Articles by Votes</h4>
+        {articles.sort(voteSort).map((article, ind) => (
           <li key={ind}><Link to={`/articles/${article.article_id}`}>{`${ind+1}. ${article.title}`}</Link>
           <br/> by {article.author}<br/>
           Votes = {article.votes}<br/><br/></li>
